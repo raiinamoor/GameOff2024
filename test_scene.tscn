@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c28lnqnub22nl"]
+[gd_scene load_steps=7 format=3 uid="uid://c28lnqnub22nl"]
+
+[ext_resource type="Script" path="res://camera_rotation.gd" id="1_2klyf"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7vxov"]
 
@@ -26,6 +28,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_aw1ej")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+script = ExtResource("1_2klyf")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.53178, 0)
