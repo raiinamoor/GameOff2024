@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://c28lnqnub22nl"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7vxov"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aw1ej"]
+diffuse_mode = 3
+roughness = 0.0
+rim_enabled = true
+rim = 0.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_lyw6k"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oof50"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s67r5"]
+diffuse_mode = 3
+specular_mode = 1
+roughness = 0.0
+
+[node name="TestScene" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_7vxov")
+surface_material_override/0 = SubResource("StandardMaterial3D_aw1ej")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.53178, 0)
+mesh = SubResource("BoxMesh_lyw6k")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.877941, 0, -0.478768, 0, 1, 0, 0.478768, 0, 0.877941, 1.31612, -0.126606, -1.10418)
+mesh = SubResource("BoxMesh_oof50")
+surface_material_override/0 = SubResource("StandardMaterial3D_s67r5")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.750803, 0, -0.660526, 0, 1, 0, 0.660526, 0, 0.750803, -2.84252, -0.47168, 2.46478)
+mesh = SubResource("BoxMesh_oof50")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89867, 1.45206, 0.432751)
