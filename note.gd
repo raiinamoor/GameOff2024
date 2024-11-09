@@ -6,6 +6,8 @@ enum {
 	CURSOR_CONNECTING
  }
 
+signal connection_changed(note: Button)
+
 @export var connection_scn: PackedScene
 var connections: Dictionary = {}
 var is_picked: bool = false
@@ -44,6 +46,7 @@ func complete_connection() -> void:
 			and curr_connection.get_parent().connections.get(self) == null \
 			and connections.get(curr_connection.get_parent()) == null:
 		curr_connection.connect_to(self)
+		curr_connection.get_parent().connection_changed.emit(curr_connection.get_parent())
 		curr_connection = null
 		cursor_state = CURSOR_DEFAULT
 
