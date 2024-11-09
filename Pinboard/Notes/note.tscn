@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cmho6kjep4bs2"]
 
 [ext_resource type="Texture2D" uid="uid://3b0iur3gcne0" path="res://icon.svg" id="1_4j8bh"]
-[ext_resource type="Script" path="res://note.gd" id="2_84h03"]
-[ext_resource type="PackedScene" uid="uid://7pnoxb7pntba" path="res://connection.tscn" id="3_q785b"]
+[ext_resource type="Script" path="res://Pinboard/Notes/note.gd" id="2_84h03"]
+[ext_resource type="PackedScene" uid="uid://7pnoxb7pntba" path="res://Pinboard/Connections/connection.tscn" id="3_q785b"]
 
 [node name="Note" type="Button" groups=["notes"]]
 offset_right = 136.0

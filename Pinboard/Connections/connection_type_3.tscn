@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnrkqcidoi054"]
 
-[ext_resource type="PackedScene" uid="uid://7pnoxb7pntba" path="res://connection.tscn" id="1_tenb3"]
+[ext_resource type="PackedScene" uid="uid://7pnoxb7pntba" path="res://Pinboard/Connections/connection.tscn" id="1_tenb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31ktk"]
 resource_local_to_scene = true

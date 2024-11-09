@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c28lnqnub22nl"]
 
-[ext_resource type="Script" path="res://camera_rotation.gd" id="1_2klyf"]
+[ext_resource type="Script" path="res://3D/camera_rotation.gd" id="1_2klyf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_lyw6k"]
 size = Vector3(10, 1, 10)
@@ -30,6 +30,8 @@ rim = 0.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 top_level = true
 script = ExtResource("1_2klyf")
+horizontal_limit_deg = 40
+vertical_limit_deg = 20
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
