@@ -46,5 +46,10 @@ func connect_to(target: Button) -> void:
 
 
 func remove_connection() -> void:
+	collider.disabled = true
+	var move_back_tween: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
+	move_back_tween.tween_property(line_2d, "points", PackedVector2Array([line_2d.points[0], line_2d.points[0]]), 1) 
+	
+	await move_back_tween.finished
 	connection_removed.emit(self)
 	queue_free()
