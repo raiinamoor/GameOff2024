@@ -24,11 +24,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		cancel_connection()
 
 
-func init_connection() -> void:
+func init_connection(scene_path: String) -> void:
 	if not cursor_state == CURSOR_DEFAULT:
 		return
 	
-	var connection := connection_scn.instantiate()
+	var scene: PackedScene = load(scene_path)
+	var connection := scene.instantiate()
 	connection.position = get_rect().get_center() - position
 	add_child(connection)
 	

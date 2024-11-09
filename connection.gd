@@ -4,6 +4,7 @@ extends Area2D
 
 signal connection_removed(connection: Connection)
 
+@export_enum("NONE", "TYPE1", "TYPE2", "TYPE3") var connection_type: int
 var end_node: Button = null
 
 @onready var root_node: Button = get_parent()
