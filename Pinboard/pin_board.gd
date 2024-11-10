@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 
 func _on_connection_changed(n: Button) -> void:
 	for i in clusters.size():
+		var connections_to_lock: Array[Connection] = []
 		if cluster_flags[i]:
 			return
 		# checking clusters for completion
@@ -31,8 +32,13 @@ func _on_connection_changed(n: Button) -> void:
 				var connection_type: int = end_node_dicts[end_node_path]
 				if not (root_node.connections.has(end_node) and root_node.connections.get(end_node, null).connection_type == connection_type):
 					cluster_complete = false
+				else:
+					connections_to_lock.append(root_node.connections.get(end_node, null))
 		
 		if cluster_complete and not cluster_flags[i]:
 			# marking the cluster as complete
 			print("Cluster {name} complete!".format({"name": cluster}))
 			cluster_flags[i] = true
+			
+			for connection: Connection in connections_to_lock:
+				connection.lock()
