@@ -26,6 +26,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		cancel_connection()
 
 
+func reveal():
+	visible = true
+	modulate.a = 0
+	scale = Vector2(3, 3)
+	rotation = deg_to_rad(randf_range(-45, 45))
+	var reveal_anim: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+	reveal_anim.set_parallel()
+	reveal_anim.tween_property(self, "modulate:a", 1, 1.5)
+	reveal_anim.tween_property(self, "scale", Vector2(1, 1), 1.5)
+	reveal_anim.tween_property(self, "rotation", 0,  1.5)
+
+
 func init_connection(scene_path: String) -> void:
 	if not cursor_state == CURSOR_DEFAULT:
 		return
