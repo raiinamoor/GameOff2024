@@ -73,6 +73,12 @@ func remove_connection_from_list(connection: Connection) -> void:
 	connections.erase(connections.find_key(connection))
 
 
+func display_as_completed() -> void:
+	# TODO change note's appearance when it is complete
+	# TODO also add some indicator when it is NOT complete
+	pass
+
+
 func pick_up() -> void:
 	is_picked = true
 	offset_from_mouse = position - get_global_mouse_position()

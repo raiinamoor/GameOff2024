@@ -40,5 +40,11 @@ func _on_connection_changed(n: Button) -> void:
 			print("Cluster {name} complete!".format({"name": cluster}))
 			cluster_flags[i] = true
 			
+			# doing stuff for each note in completed cluster
+			for note_path in cluster:
+				# TODO move a note to a pre-defined place on the board when it is complete?
+				var note: Button = get_node(note_path)
+				if not clusters.any(func(c: Dictionary): return c.has(note.get_path())):
+					note.display_as_completed()
 			for connection: Connection in connections_to_lock:
 				connection.lock()
