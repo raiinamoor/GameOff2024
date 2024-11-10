@@ -54,3 +54,7 @@ func remove_connection() -> void:
 	await move_back_tween.finished
 	connection_removed.emit(self)
 	queue_free()
+
+
+func lock() -> void:
+	collider.disabled = true
