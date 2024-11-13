@@ -21,12 +21,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={
-"unit_test_character": "res://Tests/Resources/unit_test_character.dch"
-}
-directories/dtl_directory={
-"timeline": "res://Dialogue/Timelines/timeline.dtl"
-}
+directories/dch_directory={}
+directories/dtl_directory={}
 layout/style_list=[]
 layout/default_style="Default"
 variables={}
