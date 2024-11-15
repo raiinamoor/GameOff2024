@@ -12,8 +12,6 @@ var target_rotation: Vector3 = Vector3.ZERO
 	get: return viewport.get_visible_rect().get_center()
 @onready var initial_rotation = rotation_degrees
 
-@onready var cursor_ray := $RayCast3D
-
 
 func _process(delta: float) -> void:
 	var mouse_pos = viewport.get_mouse_position()
@@ -21,10 +19,6 @@ func _process(delta: float) -> void:
 	centered_mouse_pos = centered_mouse_pos.clamp(-viewport_center, viewport_center)
 	target_rotation.y = initial_rotation.y - lerp(0, horizontal_limit_deg, centered_mouse_pos.x / viewport_center.x)
 	target_rotation.x = initial_rotation.x - lerp(0, vertical_limit_deg, centered_mouse_pos.y / viewport_center.y)
-	
-	# point the ray to where the cursor is
-	var ray_end = project_ray_normal(mouse_pos) * 1000
-	cursor_ray.target_position = ray_end
 	
 	rotation_degrees = lerp(rotation_degrees, target_rotation, smoothing_coefficient * delta)
 	
