@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=13 format=3 uid="uid://b1ogyr622jbgr"]
+
+[ext_resource type="Resource" uid="uid://37weu7kl5gb4" path="res://Characters/Dialogue/base_dialogue_style.tres" id="1_dfqx1"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_jj4il"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="3_e06rs"]
+
+[sub_resource type="Resource" id="Resource_sbek6"]
+script = ExtResource("2_jj4il")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_lcoax"]
+script = ExtResource("2_jj4il")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_c214c"]
+script = ExtResource("2_jj4il")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_tbes1"]
+script = ExtResource("2_jj4il")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_fxvq1"]
+script = ExtResource("2_jj4il")
+overrides = {
+"typing_sounds_pitch": "1.1",
+"typing_sounds_volume": "0.0"
+}
+
+[sub_resource type="Resource" id="Resource_la781"]
+script = ExtResource("2_jj4il")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_db87d"]
+script = ExtResource("2_jj4il")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_f4yk2"]
+script = ExtResource("2_jj4il")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_7f3wm"]
+script = ExtResource("2_jj4il")
+overrides = {}
+
+[resource]
+script = ExtResource("3_e06rs")
+name = "cain_dialogue_style"
+inherits = ExtResource("1_dfqx1")
+layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
+layer_info = {
+"": SubResource("Resource_sbek6"),
+"10": SubResource("Resource_lcoax"),
+"11": SubResource("Resource_c214c"),
+"12": SubResource("Resource_tbes1"),
+"13": SubResource("Resource_fxvq1"),
+"14": SubResource("Resource_la781"),
+"15": SubResource("Resource_db87d"),
+"16": SubResource("Resource_f4yk2"),
+"17": SubResource("Resource_7f3wm")
+}
+base_overrides = {}
+layers = Array[ExtResource("2_jj4il")]([])
+metadata/_latest_layer = "13"

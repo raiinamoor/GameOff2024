@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=13 format=3 uid="uid://b3j10dgrqfulj"]
+
+[ext_resource type="Resource" uid="uid://37weu7kl5gb4" path="res://Characters/Dialogue/base_dialogue_style.tres" id="1_ovp8w"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_w8pqb"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="3_ag21e"]
+
+[sub_resource type="Resource" id="Resource_xnlbs"]
+script = ExtResource("2_w8pqb")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_xp1hu"]
+script = ExtResource("2_w8pqb")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_pgl6r"]
+script = ExtResource("2_w8pqb")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_e71cf"]
+script = ExtResource("2_w8pqb")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_dffl4"]
+script = ExtResource("2_w8pqb")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_lbsbb"]
+script = ExtResource("2_w8pqb")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_sykfl"]
+script = ExtResource("2_w8pqb")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_p0pr2"]
+script = ExtResource("2_w8pqb")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_xyirq"]
+script = ExtResource("2_w8pqb")
+overrides = {}
+
+[resource]
+script = ExtResource("3_ag21e")
+name = "mitzie_dialogue_style"
+inherits = ExtResource("1_ovp8w")
+layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
+layer_info = {
+"": SubResource("Resource_xnlbs"),
+"10": SubResource("Resource_xp1hu"),
+"11": SubResource("Resource_pgl6r"),
+"12": SubResource("Resource_e71cf"),
+"13": SubResource("Resource_dffl4"),
+"14": SubResource("Resource_lbsbb"),
+"15": SubResource("Resource_sykfl"),
+"16": SubResource("Resource_p0pr2"),
+"17": SubResource("Resource_xyirq")
+}
+base_overrides = {}
+layers = Array[ExtResource("2_w8pqb")]([])
+metadata/_latest_layer = ""
