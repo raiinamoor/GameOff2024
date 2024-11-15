@@ -1,15 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmho6kjep4bs2"]
+[gd_scene load_steps=6 format=3 uid="uid://cmho6kjep4bs2"]
 
 [ext_resource type="Texture2D" uid="uid://3b0iur3gcne0" path="res://icon.svg" id="1_4j8bh"]
 [ext_resource type="Script" path="res://Pinboard/Notes/note.gd" id="2_84h03"]
 [ext_resource type="PackedScene" uid="uid://7pnoxb7pntba" path="res://Pinboard/Connections/connection.tscn" id="3_q785b"]
 
+[sub_resource type="Gradient" id="Gradient_fit8c"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_28108"]
+gradient = SubResource("Gradient_fit8c")
+
 [node name="Note" type="Button" groups=["notes"]]
-offset_right = 136.0
-offset_bottom = 136.0
+custom_minimum_size = Vector2(180, 80)
+offset_right = 180.0
+offset_bottom = 80.0
 pivot_offset = Vector2(68, 68)
 size_flags_horizontal = 0
-icon = ExtResource("1_4j8bh")
 icon_alignment = 1
 script = ExtResource("2_84h03")
 connection_scn = ExtResource("3_q785b")
@@ -74,6 +81,16 @@ mouse_filter = 1
 icon = ExtResource("1_4j8bh")
 flat = true
 expand_icon = true
+
+[node name="Background" type="NinePatchRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_28108")
 
 [connection signal="button_down" from="." to="." method="pick_up"]
 [connection signal="button_up" from="." to="." method="put_down"]
