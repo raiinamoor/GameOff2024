@@ -1,0 +1,9 @@
+if {mitzie_met} == false:
+	Initial dialogue
+	I think there is some sort of drama happening between them...
+	set {mitzie_met} = true
+So whaddaya wanna talk about?
+- Nuthin
+	[end_timeline]
+- Sumthin
+	OK!

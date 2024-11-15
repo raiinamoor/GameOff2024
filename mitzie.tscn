@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://umt4dqc3bwvo"]
+
+[ext_resource type="PackedScene" uid="uid://cixl5pd3yhhau" path="res://character.tscn" id="1_dj42h"]
+[ext_resource type="Texture2D" uid="uid://cge0xh107okhc" path="res://Mitzie happy.png" id="2_j4sop"]
+
+[node name="Mitzie" instance=ExtResource("1_dj42h")]
+timeline_name = "mitzie_timeline"
+
+[node name="Sprite3D" parent="." index="1"]
+offset = Vector2(50, 0)
+texture = ExtResource("2_j4sop")

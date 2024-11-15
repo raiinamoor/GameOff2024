@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2cs55gwxv0gt"]
+
+[ext_resource type="PackedScene" uid="uid://uxsl83xkgx30" path="res://Mitzie_room.dae" id="1_tddeh"]
+[ext_resource type="Script" path="res://3D/camera_rotation.gd" id="3_0878l"]
+[ext_resource type="PackedScene" uid="uid://umt4dqc3bwvo" path="res://mitzie.tscn" id="3_guoe5"]
+
+[node name="MitzieRoom" type="Node3D"]
+
+[node name="Mitzie_room" parent="." instance=ExtResource("1_tddeh")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.928499, 0.371335, 0, -0.371335, -0.928499, 0, 6.81246, 0)
+
+[node name="PlayerCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 4)
+script = ExtResource("3_0878l")
+horizontal_limit_deg = 40
+vertical_limit_deg = 20
+
+[node name="Mitzie" parent="." instance=ExtResource("3_guoe5")]
