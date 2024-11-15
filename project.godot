@@ -22,11 +22,11 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"unit_test_character": "res://Tests/Resources/unit_test_character.dch"
+"unit_test_character": "res://addons/Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
-"mitzie_timeline": "res://Dialogue/Timelines/mitzie_timeline.dtl",
-"timeline": "res://Dialogue/Timelines/timeline.dtl"
+"mitzie_timeline": "res://Characters/Dialogue/Timelines/mitzie_timeline.dtl",
+"timeline": "res://Characters/Dialogue/Timelines/timeline.dtl"
 }
 layout/style_list=["res://Dialogue/Timelines/dialogic_style.tres"]
 layout/default_style="res://Dialogue/Timelines/dialogic_style.tres"
@@ -67,7 +67,6 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://3D/": "purple",
 "res://Pinboard/": "red"
 }
 

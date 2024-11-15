@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://uxsl83xkgx30"
-path="res://.godot/imported/Mitzie_room.dae-0f8cb91cdb6326c4d11256988bf39114.scn"
+path="res://.godot/imported/Mitzie_room.dae-77592daa0434b6c527b83c29ffe67a2f.scn"
 
 [deps]
 
-source_file="res://Mitzie_room.dae"
-dest_files=["res://.godot/imported/Mitzie_room.dae-0f8cb91cdb6326c4d11256988bf39114.scn"]
+source_file="res://Characters/Mitzie/Mitzie_room.dae"
+dest_files=["res://.godot/imported/Mitzie_room.dae-77592daa0434b6c527b83c29ffe67a2f.scn"]
 
 [params]
 

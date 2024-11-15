@@ -1,6 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c28lnqnub22nl"]
-
-[ext_resource type="Script" path="res://3D/camera_rotation.gd" id="1_2klyf"]
+[gd_scene load_steps=8 format=3 uid="uid://c28lnqnub22nl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_lyw6k"]
 size = Vector3(10, 1, 10)
@@ -26,21 +24,7 @@ rim = 0.5
 
 [node name="TestScene" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-top_level = true
-script = ExtResource("1_2klyf")
-horizontal_limit_deg = 40
-vertical_limit_deg = 20
-
-[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-top_level = true
-target_position = Vector3(0, 0, -10)
-
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Camera3D"]
-remote_path = NodePath("../RayCast3D")
-update_rotation = false
+[node name="PlayerCamera" type="Camera3D" parent="."]
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.53178, 0)
@@ -53,7 +37,7 @@ mesh = SubResource("BoxMesh_oof50")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89867, 1.45206, 0.432751)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="Area3D" parent="."]
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(0.877941, 0, -0.478768, 0, 1, 0, 0.478768, 0, 0.877941, 1.31612, -0.126606, -1.10418)

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cge0xh107okhc"
-path.bptc="res://.godot/imported/Mitzie happy.png-f9a44d4547af0989ed9f456653f01db0.bptc.ctex"
+path.bptc="res://.godot/imported/Mitzie happy.png-81ac094646bba7864b78ca773e38b035.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Mitzie happy.png"
-dest_files=["res://.godot/imported/Mitzie happy.png-f9a44d4547af0989ed9f456653f01db0.bptc.ctex"]
+source_file="res://Characters/Mitzie/Mitzie happy.png"
+dest_files=["res://.godot/imported/Mitzie happy.png-81ac094646bba7864b78ca773e38b035.bptc.ctex"]
 
 [params]
 
