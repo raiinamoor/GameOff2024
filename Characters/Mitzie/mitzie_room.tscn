@@ -11,6 +11,7 @@ transform = Transform3D(1, 0, 0, 0, -0.928499, 0.371335, 0, -0.371335, -0.928499
 
 [node name="PlayerCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 4)
+fov = 60.0
 script = ExtResource("2_ui67v")
 horizontal_limit_deg = 40
 vertical_limit_deg = 20
