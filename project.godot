@@ -28,8 +28,8 @@ directories/dtl_directory={
 "mitzie_timeline": "res://Characters/Dialogue/Timelines/mitzie_timeline.dtl",
 "timeline": "res://Characters/Dialogue/Timelines/timeline.dtl"
 }
-layout/style_list=["res://Characters/Dialogue/base_dialogue_style.tres", "res://Characters/Dialogue/cain_dialogue_style.tres", "res://Characters/Dialogue/mitzie_dialogue_style.tres", "res://Characters/Dialogue/aunt_j_dialogue_style.tres", "res://test.tres"]
-layout/default_style="res://Dialogue/Timelines/dialogic_style.tres"
+layout/style_list=["res://Characters/Dialogue/base_dialogue_style.tres", "res://Characters/Dialogue/cain_dialogue_style.tres", "res://Characters/Dialogue/mitzie_dialogue_style.tres", "res://Characters/Dialogue/aunt_j_dialogue_style.tres"]
+layout/default_style="res://Characters/Dialogue/base_dialogue_style.tres"
 variables={
 "mitzie_met": false
 }

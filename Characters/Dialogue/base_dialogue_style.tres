@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_w1nfj"]
 [ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="3_7fvgs"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_pg2ma"]
-[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="4_kea8e"]
+[ext_resource type="PackedScene" uid="uid://cfix05togq2q8" path="res://Characters/Dialogue/Layers/VisualNovelTextbox/custom_visual_novel_textbox.tscn" id="5_uplv2"]
 [ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn" id="6_5wohr"]
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="6_xyad3"]
 [ext_resource type="PackedScene" uid="uid://b81row5db6q6b" path="res://Characters/Dialogue/Layers/CenteredChoices/custom_centered_choices.tscn" id="7_31ecw"]
@@ -13,7 +13,9 @@
 
 [sub_resource type="Resource" id="Resource_p3ctd"]
 script = ExtResource("1_kpasf")
-overrides = {}
+overrides = {
+"global_bg_color": "Color(1, 1, 1, 0.9)"
+}
 
 [sub_resource type="Resource" id="Resource_tq038"]
 script = ExtResource("1_kpasf")
@@ -32,8 +34,18 @@ overrides = {}
 
 [sub_resource type="Resource" id="Resource_vx0qb"]
 script = ExtResource("1_kpasf")
-scene = ExtResource("4_kea8e")
+scene = ExtResource("5_uplv2")
 overrides = {
+"bold_font": "\"res://Fonts/MORE-SUGAR.REGULAR.TTF\"",
+"box_animation_in": "1",
+"box_animation_out": "1",
+"box_panel": "\"res://textbox.tres\"",
+"box_size": "Vector2(550, 219)",
+"normal_font": "\"res://Fonts/MORE-SUGAR.THIN.TTF\"",
+"text_custom_color": "Color(0, 0, 0, 1)",
+"text_size": "32.0",
+"text_use_global_color": "false",
+"text_use_global_size": "false",
 "typing_sounds_every_nths_character": "3.0",
 "typing_sounds_mode": "1",
 "typing_sounds_pitch_variance": "0.1"
@@ -76,4 +88,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_kpasf")]([])
-metadata/_latest_layer = "15"
+metadata/_latest_layer = "13"
