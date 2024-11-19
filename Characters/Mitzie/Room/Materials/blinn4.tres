@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cq4i3fy1hhcfb"]
+
+[ext_resource type="Texture2D" uid="uid://b45ehre63oo5p" path="res://Characters/Mitzie/Room/Mitzie standing drawing.png" id="1_q0ji4"]
+
+[resource]
+resource_name = "blinn4"
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("1_q0ji4")
+metallic_specular = 0.0
+roughness = 0.01

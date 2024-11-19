@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ccgk7ntvxo888"]
+
+[resource]
+resource_name = "Light_green"
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.643817, 0.8, 0.3488, 1)
+metallic_specular = 0.0
+roughness = 0.01

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dsh4cthhbmggy"]
+
+[resource]
+resource_name = "lambert17"
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.732, 0.732, 0.732, 1)
+metallic_specular = 0.0
+roughness = 0.01

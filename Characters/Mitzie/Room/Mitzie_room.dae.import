@@ -1,0 +1,101 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://uxsl83xkgx30"
+path="res://.godot/imported/Mitzie_room.dae-793df448d607fe03cbb9b419308604fb.scn"
+
+[deps]
+
+source_file="res://Characters/Mitzie/Room/Mitzie_room.dae"
+dest_files=["res://.godot/imported/Mitzie_room.dae-793df448d607fe03cbb9b419308604fb.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Beige1": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Beige1.tres"
+},
+"Blue": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Blue.tres"
+},
+"Dark_brown": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Dark_brown.tres"
+},
+"Green": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Green.tres"
+},
+"Light_green": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Light_green.tres"
+},
+"Lighter_wood": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Lighter_wood.tres"
+},
+"New_blue": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/New_blue.tres"
+},
+"Red": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Red.tres"
+},
+"Yellow": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Yellow.tres"
+},
+"blinn4": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/blinn4.tres"
+},
+"blinn5": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/blinn5.tres"
+},
+"blinn6": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/blinn6.tres"
+},
+"lambert17": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/lambert17.tres"
+},
+"lambert2": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/lambert2.tres"
+},
+"lambert7": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/lambert7.tres"
+},
+"standardSurface1": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/standardSurface1.tres"
+}
+}
+}
