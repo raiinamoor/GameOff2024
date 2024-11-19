@@ -1,8 +1,8 @@
 extends Camera3D
 
 
-@export var horizontal_limit_deg: int = 90
-@export var vertical_limit_deg: int = 90
+@export var horizontal_limit_deg: int = 40
+@export var vertical_limit_deg: int = 20
 @export var smoothing_coefficient: float = 5
 
 var target_rotation: Vector3 = Vector3.ZERO
