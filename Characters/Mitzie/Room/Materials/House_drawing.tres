@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://gqpgpwo456pk"]
+
+[ext_resource type="Texture2D" uid="uid://vwfv8w2m5m66" path="res://Characters/Mitzie/Room/House drawing.png" id="1_1ua3x"]
+
+[resource]
+resource_name = "House_drawing"
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("1_1ua3x")
+metallic_specular = 0.0
+roughness = 0.01

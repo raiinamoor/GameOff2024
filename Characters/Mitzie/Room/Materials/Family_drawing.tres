@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cv0o40w4qe2s7"]
+
+[ext_resource type="Texture2D" uid="uid://s4uef0nw7sdm" path="res://Characters/Mitzie/Room/Family drawing.png" id="1_qyhnl"]
+
+[resource]
+resource_name = "Family_drawing"
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("1_qyhnl")
+metallic_specular = 0.0
+roughness = 0.0104153

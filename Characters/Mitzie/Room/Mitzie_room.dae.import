@@ -33,10 +33,6 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Beige1": {
-"use_external/enabled": true,
-"use_external/path": "res://Characters/Mitzie/Room/Materials/Beige1.tres"
-},
 "Blue": {
 "use_external/enabled": true,
 "use_external/path": "res://Characters/Mitzie/Room/Materials/Blue.tres"
@@ -45,21 +41,37 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://Characters/Mitzie/Room/Materials/Dark_brown.tres"
 },
+"Darker_beige": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Darker_beige.tres"
+},
+"Family_drawing": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Family_drawing.tres"
+},
 "Green": {
 "use_external/enabled": true,
 "use_external/path": "res://Characters/Mitzie/Room/Materials/Green.tres"
+},
+"House_drawing": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/House_drawing.tres"
 },
 "Light_green": {
 "use_external/enabled": true,
 "use_external/path": "res://Characters/Mitzie/Room/Materials/Light_green.tres"
 },
+"Lighter_blue1": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Lighter_blue1.tres"
+},
 "Lighter_wood": {
 "use_external/enabled": true,
 "use_external/path": "res://Characters/Mitzie/Room/Materials/Lighter_wood.tres"
 },
-"New_blue": {
+"Mitzie_standing_drawing": {
 "use_external/enabled": true,
-"use_external/path": "res://Characters/Mitzie/Room/Materials/New_blue.tres"
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Mitzie_standing_drawing.tres"
 },
 "Red": {
 "use_external/enabled": true,
@@ -68,18 +80,6 @@ _subresources={
 "Yellow": {
 "use_external/enabled": true,
 "use_external/path": "res://Characters/Mitzie/Room/Materials/Yellow.tres"
-},
-"blinn4": {
-"use_external/enabled": true,
-"use_external/path": "res://Characters/Mitzie/Room/Materials/blinn4.tres"
-},
-"blinn5": {
-"use_external/enabled": true,
-"use_external/path": "res://Characters/Mitzie/Room/Materials/blinn5.tres"
-},
-"blinn6": {
-"use_external/enabled": true,
-"use_external/path": "res://Characters/Mitzie/Room/Materials/blinn6.tres"
 },
 "lambert17": {
 "use_external/enabled": true,

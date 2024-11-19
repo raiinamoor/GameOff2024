@@ -1,9 +1,7 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://bbfia7f62lltj"]
 
 [resource]
-resource_name = "New_blue"
+resource_name = "Lighter_blue1"
 cull_mode = 2
-diffuse_mode = 3
 albedo_color = Color(0, 0.50659, 0.6272, 1)
-metallic_specular = 0.0
-roughness = 0.01
+roughness = 0.0764706
