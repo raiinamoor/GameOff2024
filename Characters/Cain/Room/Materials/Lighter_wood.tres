@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c0m33je0tiniw"]
+
+[resource]
+resource_name = "Lighter_wood"
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.4, 0.26216, 0.1256, 1)
+metallic_specular = 0.0
+roughness = 0.01

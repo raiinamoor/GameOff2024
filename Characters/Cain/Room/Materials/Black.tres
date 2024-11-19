@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bhaaga62an682"]
+
+[resource]
+resource_name = "Black"
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.08528, 0.07872, 0.0968, 1)
+metallic_specular = 0.0
+roughness = 0.1

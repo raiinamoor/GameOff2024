@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bk4f8p2wnadwc"
-path="res://.godot/imported/Cain_room.dae-40a55ea80a4fcf2e8655c4fcbebd7fa7.scn"
+uid="uid://dqu2vvwipo1m3"
+path="res://.godot/imported/Cain_room.dae-cb1e6be4f026db9953233820ba90a3f2.scn"
 
 [deps]
 
-source_file="res://Characters/Cain/Cain_room.dae"
-dest_files=["res://.godot/imported/Cain_room.dae-40a55ea80a4fcf2e8655c4fcbebd7fa7.scn"]
+source_file="res://Characters/Cain/Room/Cain_room.dae"
+dest_files=["res://.godot/imported/Cain_room.dae-cb1e6be4f026db9953233820ba90a3f2.scn"]
 
 [params]
 
@@ -45,10 +45,6 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://Characters/Cain/Room/Materials/Cold_blue.tres"
 },
-"Computer_monitor": {
-"use_external/enabled": true,
-"use_external/path": "res://Characters/Cain/Room/Materials/Computer_monitor.tres"
-},
 "Dark_brown": {
 "use_external/enabled": true,
 "use_external/path": "res://Characters/Cain/Room/Materials/Dark_brown.tres"
@@ -69,17 +65,17 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://Characters/Cain/Room/Materials/Silver.tres"
 },
-"blinn12": {
+"blinn10": {
 "use_external/enabled": true,
-"use_external/path": "res://Characters/Cain/Room/Materials/blinn12.tres"
+"use_external/path": "res://Characters/Cain/Room/Materials/blinn10.tres"
 },
-"blinn13": {
+"blinn11": {
 "use_external/enabled": true,
-"use_external/path": "res://Characters/Cain/Room/Materials/blinn13.tres"
+"use_external/path": "res://Characters/Cain/Room/Materials/blinn11.tres"
 },
-"blinn14": {
+"blinn9": {
 "use_external/enabled": true,
-"use_external/path": "res://Characters/Cain/Room/Materials/blinn14.tres"
+"use_external/path": "res://Characters/Cain/Room/Materials/blinn9.tres"
 },
 "lambert17": {
 "use_external/enabled": true,

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://l3mjk0unc7ri"]
+
+[ext_resource type="PackedScene" uid="uid://bk4f8p2wnadwc" path="res://Characters/Cain/Cain_room.dae" id="1_3ipsr"]
+[ext_resource type="Script" path="res://Player/camera_rotation.gd" id="2_vxxqf"]
+[ext_resource type="PackedScene" uid="uid://6md88g6bukjo" path="res://Characters/Cain/cain.tscn" id="3_vkkjy"]
+
+[sub_resource type="Environment" id="Environment_2kxt1"]
+background_energy_multiplier = 3.0
+
+[node name="CainRoom" type="Node3D"]
+
+[node name="Cain_room" parent="." instance=ExtResource("1_3ipsr")]
+transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.12115, 2.10805, 0.423337)
+light_energy = 2.0
+light_volumetric_fog_energy = 0.0
+omni_attenuation = 1.5
+
+[node name="PlayerCamera" type="Camera3D" parent="."]
+transform = Transform3D(0.905361, 0, -0.424642, 0, 1, 0, 0.424642, 0, 0.905361, -1.626, 1.6, 2.259)
+fov = 60.0
+script = ExtResource("2_vxxqf")
+
+[node name="Cain" parent="." instance=ExtResource("3_vkkjy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.429459, 1.22829, -1.70726)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.729506, -0.683974, 0, 0.683974, 0.729506, 0, 7.27624, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2kxt1")

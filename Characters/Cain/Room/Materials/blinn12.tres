@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://2vxw7x4xm6pj"]
+
+[ext_resource type="Texture2D" uid="uid://c22pydriqkdyv" path="res://Characters/Cain/Room/Left 4 dead poster.png" id="1_6fkqu"]
+
+[resource]
+resource_name = "blinn12"
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("1_6fkqu")
+metallic_specular = 0.0
+roughness = 0.0104153

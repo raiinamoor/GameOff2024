@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://diafuh4q6aaiw"]
+
+[resource]
+resource_name = "Computer_monitor"
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.8, 0.8, 0.8, 1)
+metallic_specular = 0.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(1, 1, 1, 1)

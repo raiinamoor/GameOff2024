@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c82vh0svlr2pn"
-path.s3tc="res://.godot/imported/Cain_sprite.png-43d459dd224a914d6e67a5f0f7362e69.s3tc.ctex"
+uid="uid://b7hesmjn5nnbf"
+path.s3tc="res://.godot/imported/Portal poster.png-6f5264a0048d6c7f590762dbce40fa6e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Characters/Cain/Cain_sprite.png"
-dest_files=["res://.godot/imported/Cain_sprite.png-43d459dd224a914d6e67a5f0f7362e69.s3tc.ctex"]
+source_file="res://Characters/Cain/Room/Portal poster.png"
+dest_files=["res://.godot/imported/Portal poster.png-6f5264a0048d6c7f590762dbce40fa6e.s3tc.ctex"]
 
 [params]
 

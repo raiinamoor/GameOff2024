@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ckjvsco8l1tu5"]
+
+[ext_resource type="Texture2D" uid="uid://b21hecfq1ekhm" path="res://Characters/Cain/Room/Half life 2 poster.png" id="1_tjnng"]
+
+[resource]
+resource_name = "blinn13"
+cull_mode = 2
+diffuse_mode = 3
+albedo_texture = ExtResource("1_tjnng")
+metallic_specular = 0.0
+roughness = 0.0104153

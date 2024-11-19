@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dvxwnsotxngvq"]
+
+[resource]
+resource_name = "Beige1"
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.412, 0.292513, 0.145436, 1)
+metallic_specular = 0.0
+roughness = 0.1

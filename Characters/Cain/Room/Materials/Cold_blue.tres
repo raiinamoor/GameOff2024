@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cpxwjqk3xi28w"]
+
+[resource]
+resource_name = "Cold_blue"
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.22771, 0.210576, 0.656, 1)
+metallic_specular = 0.0
+roughness = 0.01

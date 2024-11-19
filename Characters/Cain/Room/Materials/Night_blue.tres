@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dqe51mnw10hvh"]
+
+[resource]
+resource_name = "Night_blue"
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.07482, 0.072245, 0.1392, 1)
+metallic_specular = 0.0
+roughness = 0.01

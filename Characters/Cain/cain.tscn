@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://6md88g6bukjo"]
+
+[ext_resource type="PackedScene" uid="uid://cixl5pd3yhhau" path="res://Characters/character.tscn" id="1_b76w1"]
+[ext_resource type="Texture2D" uid="uid://c82vh0svlr2pn" path="res://Characters/Cain/Cain_sprite.png" id="2_k1smo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8mpbo"]
+resource_local_to_scene = true
+size = Vector3(0.775146, 2.65984, 0.183838)
+
+[node name="Cain" instance=ExtResource("1_b76w1")]
+timeline_name = "cain_timeline"
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.405619, 0)
+shape = SubResource("BoxShape3D_8mpbo")
+
+[node name="Sprite3D" parent="." index="1"]
+offset = Vector2(40, 150)
+pixel_size = 0.0015
+texture = ExtResource("2_k1smo")
