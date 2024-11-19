@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bvkt1rosdfuuu"]
+
+[resource]
+resource_name = "Dark_brown"
+cull_mode = 2
+diffuse_mode = 3
+albedo_color = Color(0.1784, 0.102031, 0.008028, 1)
+metallic_specular = 0.0
+roughness = 0.01
