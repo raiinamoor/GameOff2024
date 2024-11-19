@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://Characters/character.gd" id="1_58ce5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hlhfl"]
-size = Vector3(0.881836, 1.83133, 0.183838)
+resource_local_to_scene = true
+size = Vector3(0.775146, 2.17494, 0.183838)
 
 [sub_resource type="Animation" id="Animation_yk15y"]
 length = 0.001
@@ -38,7 +39,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_58ce5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0375977, 0.138596, 0)
 shape = SubResource("BoxShape3D_hlhfl")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
