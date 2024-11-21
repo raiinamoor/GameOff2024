@@ -13,7 +13,7 @@ func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, 
 
 
 func _on_mouse_entered() -> void:
-	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+	Input.set_default_cursor_shape(Input.CURSOR_HELP)
 
 
 func _on_mouse_exited() -> void:
