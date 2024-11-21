@@ -6,7 +6,10 @@
 
 [sub_resource type="Resource" id="Resource_sbek6"]
 script = ExtResource("2_jj4il")
-overrides = {}
+overrides = {
+"global_bg_color": "Color(0.274826, 0.247467, 0.597656, 0.9)",
+"global_font_color": "Color(0.153074, 0.0306549, 0.160156, 1)"
+}
 
 [sub_resource type="Resource" id="Resource_lcoax"]
 script = ExtResource("2_jj4il")
@@ -23,7 +26,8 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_fxvq1"]
 script = ExtResource("2_jj4il")
 overrides = {
-"typing_sounds_pitch": "1.1",
+"typing_sounds_pitch": "1.02",
+"typing_sounds_sounds_folder": "\"res://Characters/Cain/Voice\"",
 "typing_sounds_volume": "0.0"
 }
 

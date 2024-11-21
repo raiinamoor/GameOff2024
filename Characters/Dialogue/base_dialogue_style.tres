@@ -14,7 +14,9 @@
 [sub_resource type="Resource" id="Resource_p3ctd"]
 script = ExtResource("1_kpasf")
 overrides = {
-"global_bg_color": "Color(1, 1, 1, 0.9)"
+"global_bg_color": "Color(1, 1, 1, 0.9)",
+"global_font": "\"res://Fonts/MORE-SUGAR.THIN.TTF\"",
+"global_font_size": "32.0"
 }
 
 [sub_resource type="Resource" id="Resource_tq038"]
@@ -41,12 +43,11 @@ overrides = {
 "box_animation_out": "1",
 "box_panel": "\"res://textbox.tres\"",
 "box_size": "Vector2(550, 219)",
+"name_label_box_offset": "Vector2(0, -40)",
 "normal_font": "\"res://Fonts/MORE-SUGAR.THIN.TTF\"",
 "text_custom_color": "Color(0, 0, 0, 1)",
 "text_size": "32.0",
-"text_use_global_color": "false",
-"text_use_global_size": "false",
-"typing_sounds_every_nths_character": "3.0",
+"typing_sounds_every_nths_character": "4.0",
 "typing_sounds_mode": "1",
 "typing_sounds_pitch_variance": "0.1"
 }
