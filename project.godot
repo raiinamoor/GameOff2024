@@ -22,16 +22,34 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"cain_dialogic": "res://Characters/Cain/cain_dialogic.dch",
+"mitzie_dialogic": "res://Characters/Mitzie/mitzie_dialogic.dch",
 "unit_test_character": "res://addons/Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"cain_timeline": "res://Characters/Dialogue/Timelines/cain_timeline.dtl",
 "mitzie_timeline": "res://Characters/Dialogue/Timelines/mitzie_timeline.dtl",
 "timeline": "res://Characters/Dialogue/Timelines/timeline.dtl"
 }
 layout/style_list=["res://Characters/Dialogue/base_dialogue_style.tres", "res://Characters/Dialogue/cain_dialogue_style.tres", "res://Characters/Dialogue/mitzie_dialogue_style.tres", "res://Characters/Dialogue/aunt_j_dialogue_style.tres"]
 layout/default_style="res://Characters/Dialogue/base_dialogue_style.tres"
 variables={
-"mitzie_met": false
+"1_get": false,
+"2_get": false,
+"3_get": false,
+"4_get": false,
+"5_get": false,
+"6_get": false,
+"7_get": false,
+"8_get": false,
+"9_get": false,
+"A_seen": false,
+"B_seen": false,
+"asked_cain_about_drama": false,
+"cluster_1_complete": false,
+"cluster_2_complete": false,
+"mitzie_met": false,
+"told_mitzie_cain_admitted": false
 }
 glossary/default_case_sensitive=true
 extensions_folder="res://addons/dialogic_additions"
