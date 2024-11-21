@@ -6,7 +6,10 @@
 
 [sub_resource type="Resource" id="Resource_xnlbs"]
 script = ExtResource("2_w8pqb")
-overrides = {}
+overrides = {
+"global_bg_color": "Color(1, 0.728394, 0.304688, 0.9)",
+"global_font_color": "Color(0.421875, 0.0758057, 0.0758057, 1)"
+}
 
 [sub_resource type="Resource" id="Resource_xp1hu"]
 script = ExtResource("2_w8pqb")
@@ -22,7 +25,10 @@ overrides = {}
 
 [sub_resource type="Resource" id="Resource_dffl4"]
 script = ExtResource("2_w8pqb")
-overrides = {}
+overrides = {
+"typing_sounds_pitch_variance": "0.2",
+"typing_sounds_sounds_folder": "\"res://Characters/Mitzie/Voice\""
+}
 
 [sub_resource type="Resource" id="Resource_lbsbb"]
 script = ExtResource("2_w8pqb")
@@ -58,4 +64,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("2_w8pqb")]([])
-metadata/_latest_layer = ""
+metadata/_latest_layer = "13"
