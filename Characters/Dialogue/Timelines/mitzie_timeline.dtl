@@ -1,9 +1,63 @@
 if {mitzie_met} == false:
-	Initial dialogue
-	I think there is some sort of drama happening between them...
+	mitzie_dialogic: I think there's something going on between the two.
+	mitzie_dialogic: Cain's been acting really strange, and J won't talk to me about it.
+	label first_fork
+	- How has he been strange? | [if {1_get} == false]
+		mitzie_dialogic: He's been quiet!
+		mitzie_dialogic: Quieter than usual.
+		mitzie_dialogic: Always in his room, not really talking to me or anyone else.
+		set {1_get} = true
+		[signal arg="1_get"]
+	- Why won't Aunt J talk to you? | [if {2_get} == false]
+		mitzie_dialogic: Because I'm "too young". It's so annoying!
+		mitzie_dialogic: I'm always gonna be the youngest, when will she stop using it against me?!
+		set {2_get} = true
+		[signal arg="2_get"]
+	if {1_get}    ==    false or {2_get} == false:
+		jump first_fork
 	set {mitzie_met} = true
-So whaddaya wanna talk about?
-- Nuthin
+mitzie_dialogic: So whaddaya wanna talk about?
+- Maybe there's some sort of drama going on? | [if {cluster_1_complete} == true and {A_seen} == false]
+	mitzie_dialogic: Oh, you might be on to something! Maybe there is some drama between them.
+	mitzie_dialogic: I think it might be a good idea to ask Cain!
+	mitzie_dialogic: I would ask him, but he's kinda scaring me...
+	set {A_seen} = true
+	[signal arg="unlock_cain"]
 	[end_timeline]
-- Sumthin
-	OK!
+- Cain said something was up! | [if {asked_cain_about_drama} == true and {told_mitzie_cain_admitted} == false]
+	mitzie_dialogic: So there IS something going on! I was right!
+	mitzie_dialogic: But, hm. What could it be?
+	mitzie_dialogic: Cain's always been a troublemaker. He probably did something bad.
+	set {5_get} = true
+	[signal arg="5_get"]
+	mitzie_dialogic: But what could it have been..?
+	label what could it have been?
+	- He KILLED someone! | [if {6_get} == false]
+		mitzie_dialogic: Killed someone? Are you serious?
+		mitzie_dialogic: Well, Cain is mean, but he wouldn't kill anyone...
+		mitzie_dialogic:  He wouldn't be able to cover it up, anyways. He's bad at that.
+		set {6_get} = true
+		[signal arg="6_get"]
+	- He BROKE THE LAW! | [if {7_get} == false]
+		mitzie_dialogic: Well, maybe. He probably did something bad when he was in college.
+		set {7_get} = true
+		[signal arg="7_get"]
+		set {8_get} = true
+		[signal arg="8_get"]
+	if {6_get} == false or {7_get} == false:
+		jump what could it have been?
+	set {told_mitzie_cain_admitted} = true
+	[end_timeline]
+- Cain got caught! | [if {B_seen} == false]
+	mitzie_dialogic: Caught? Caught doing what?
+	- Something bad!
+	mitzie_dialogic: Oh, like he tried covering something up, but got caught after that?
+	mitzie_dialogic: That's happened before, so I wouldn't be surprised if he did it again.
+	set {9_get} = true
+	[signal arg="9_get"]
+	- What was it?
+	mitzie_dialogic: Well, which time? It's happened a lot.
+	mitzie_dialogic: J can probably tell you the last time it's happened if you ask her.
+	set {B_seen} = true
+- Nothing!
+	[end_timeline]
