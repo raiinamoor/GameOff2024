@@ -22,6 +22,7 @@ omni_attenuation = 1.5
 transform = Transform3D(0.905361, 0, -0.424642, 0, 1, 0, 0.424642, 0, 0.905361, -1.626, 1.6, 2.259)
 fov = 60.0
 script = ExtResource("2_vxxqf")
+horizontal_limit_deg = 30
 
 [node name="Cain" parent="." instance=ExtResource("3_vkkjy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.429459, 1.22829, -1.70726)

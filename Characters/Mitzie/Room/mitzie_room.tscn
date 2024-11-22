@@ -18,9 +18,10 @@ sky_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 4)
 fov = 60.0
 script = ExtResource("1_tk2wn")
+horizontal_limit_deg = 30
 
 [node name="Mitzie" parent="." instance=ExtResource("2_0iyqx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.746965, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.746965, 1.10085, 0)
 
 [node name="Mitzie_room" parent="." instance=ExtResource("3_h0c6p")]
 transform = Transform3D(80, 0, 0, 0, 80, 0, 0, 0, 80, 0, 0, 0)
