@@ -1,11 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://umt4dqc3bwvo"]
+[gd_scene load_steps=7 format=3 uid="uid://umt4dqc3bwvo"]
 
 [ext_resource type="PackedScene" uid="uid://cixl5pd3yhhau" path="res://Characters/character.tscn" id="1_dj42h"]
 [ext_resource type="Texture2D" uid="uid://cge0xh107okhc" path="res://Characters/Mitzie/Mitzie happy.png" id="2_j4sop"]
+[ext_resource type="Shader" path="res://Characters/wobble_effect.gdshader" id="3_tjpfo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pk2fp"]
 resource_local_to_scene = true
 size = Vector3(0.775146, 1.89197, 0.183838)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6yg2b"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_tjpfo")
+shader_parameter/billboard = null
+shader_parameter/sprite_texture = ExtResource("2_j4sop")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8bid7"]
+resource_local_to_scene = true
+size = Vector2(2.508, 3.274)
+subdivide_width = 50
+subdivide_depth = 38
 
 [node name="Mitzie" instance=ExtResource("1_dj42h")]
 timeline_name = "mitzie_timeline"
@@ -17,3 +31,8 @@ shape = SubResource("BoxShape3D_pk2fp")
 [node name="Sprite3D" parent="." index="1"]
 offset = Vector2(50, 0)
 texture = ExtResource("2_j4sop")
+
+[node name="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0681118, 0.0124586, 0)
+material_override = SubResource("ShaderMaterial_6yg2b")
+mesh = SubResource("QuadMesh_8bid7")

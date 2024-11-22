@@ -1,10 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://cixl5pd3yhhau"]
+[gd_scene load_steps=9 format=3 uid="uid://cixl5pd3yhhau"]
 
 [ext_resource type="Script" path="res://Characters/character.gd" id="1_58ce5"]
+[ext_resource type="Shader" path="res://Characters/wobble_effect.gdshader" id="2_fmt4s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hlhfl"]
 resource_local_to_scene = true
 size = Vector3(0.775146, 2.17494, 0.183838)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qnl2r"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_fmt4s")
+shader_parameter/billboard = null
+
+[sub_resource type="QuadMesh" id="QuadMesh_1esfl"]
+resource_local_to_scene = true
+size = Vector2(1.9, 2.48)
+subdivide_width = 50
+subdivide_depth = 38
 
 [sub_resource type="Animation" id="Animation_yk15y"]
 length = 0.001
@@ -42,8 +55,15 @@ script = ExtResource("1_58ce5")
 shape = SubResource("BoxShape3D_hlhfl")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+visible = false
 pixel_size = 0.0012
 billboard = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118237, 0)
+material_override = SubResource("ShaderMaterial_qnl2r")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_1esfl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
