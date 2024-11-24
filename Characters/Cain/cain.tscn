@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://6md88g6bukjo"]
+[gd_scene load_steps=4 format=3 uid="uid://25i1u3vpynft"]
 
 [ext_resource type="PackedScene" uid="uid://cixl5pd3yhhau" path="res://Characters/character.tscn" id="1_b76w1"]
 [ext_resource type="Texture2D" uid="uid://c82vh0svlr2pn" path="res://Characters/Cain/Cain_sprite.png" id="2_k1smo"]
