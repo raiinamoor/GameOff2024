@@ -9,8 +9,8 @@ const BUBBLE_SHAPE = preload("res://UI/Speech bubble.png")
 
 
 func _ready() -> void:
-	Input.set_custom_mouse_cursor(ARROW_SHAPE, Input.CURSOR_ARROW)
-	Input.set_custom_mouse_cursor(GRABBING_HAND, Input.CURSOR_DRAG)
-	Input.set_custom_mouse_cursor(OPEN_HAND, Input.CURSOR_CAN_DROP)
-	Input.set_custom_mouse_cursor(POINTING_HAND, Input.CURSOR_POINTING_HAND)
-	Input.set_custom_mouse_cursor(BUBBLE_SHAPE, Input.CURSOR_HELP)
+	Input.set_custom_mouse_cursor(ARROW_SHAPE, Input.CURSOR_ARROW, Vector2(16, 3))
+	Input.set_custom_mouse_cursor(GRABBING_HAND, Input.CURSOR_DRAG, Vector2(32, 32))
+	Input.set_custom_mouse_cursor(OPEN_HAND, Input.CURSOR_CAN_DROP, Vector2(32, 32))
+	Input.set_custom_mouse_cursor(POINTING_HAND, Input.CURSOR_POINTING_HAND, Vector2(15, 5))
+	Input.set_custom_mouse_cursor(BUBBLE_SHAPE, Input.CURSOR_HELP, Vector2(32, 32)) 
