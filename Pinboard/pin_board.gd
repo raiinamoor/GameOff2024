@@ -1,10 +1,23 @@
 extends Control
 
 
+const FARTHEST = Vector2(0.5, 0.5)
+const MEDIUM = Vector2(0.75, 0.75)
+const CLOSEST = Vector2(1, 1)
+
 @export var clusters: Array[Dictionary]
 var queued_notes: Array[Button] = []
+var prev_mouse_pos: Vector2 = Vector2(0, 0)
+
+@onready var camera_2d: Camera2D = $"../Camera2D"
 @onready var notes: Array[Node] = get_tree().get_nodes_in_group("notes")
 @onready var cluster_flags: Array[bool] = []
+var zoom: Vector2 = Vector2(0.5, 0.5):
+	get: return camera_2d.zoom
+	set(value):
+		var t: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
+		t.tween_property(camera_2d, "zoom", value, 0.75)
+
 
 func _ready() -> void:
 	for i in clusters.size():
@@ -14,6 +27,37 @@ func _ready() -> void:
 	
 	Dialogic.signal_event.connect(queue_note)
 	$"../../UILayer/Screen/OpenPinboardButton".pressed.connect(toggle_board)
+
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouse:
+		#print(event)
+		if event.is_action_pressed("zoom_in"):
+			zoom_in()
+		elif event.is_action_pressed("zoom_out"):
+			zoom_out()
+		
+		print(event)
+		if event.is_action_pressed("pan_around_the_board"):
+			prev_mouse_pos = get_global_mouse_position()
+		var diff = prev_mouse_pos - get_global_mouse_position()
+		if Input.is_action_pressed("pan_around_the_board"):
+			camera_2d.position += diff
+
+
+
+func zoom_in():
+	if camera_2d.zoom == FARTHEST:
+		zoom = MEDIUM
+	elif camera_2d.zoom == MEDIUM:
+		zoom = CLOSEST
+	
+
+func zoom_out():
+	if camera_2d.zoom == CLOSEST:
+		zoom = MEDIUM
+	elif camera_2d.zoom == MEDIUM:
+		zoom = FARTHEST
 
 
 func toggle_board():
