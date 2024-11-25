@@ -7,3 +7,10 @@
 script = ExtResource("1_jjht5")
 
 [node name="TestScene" parent="." instance=ExtResource("2_1x0it")]
+[node name="MusicManager" type="Node" parent="."]
+script = ExtResource("4_8ma02")
+
+[node name="MainMenuLayer" type="AudioStreamPlayer" parent="MusicManager"]
+stream = ExtResource("5_5wwdd")
+
+[node name="HouseBaseLayer" type="AudioStreamPlayer" parent="MusicManager"]
