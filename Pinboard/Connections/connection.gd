@@ -21,9 +21,9 @@ func _process(delta: float) -> void:
 	if end_node == null:
 		line_2d.points[-1] = get_local_mouse_position()
 	else:
-		var end_position: Vector2 = end_node.get_rect().get_center()
+		var end_position: Vector2 = end_node.global_position + end_node.get_rect().size / 2
 		# TODO make it so that the line connects to the edge of the note
-		#var position_on_edge: Vector2 = (end_position - root_node.position).clamp(-end_node.get_rect().size / 2, end_node.get_rect().size / 2)
+		#var position_on_edge: Vector2 = (end_position - root_node.global_position).clamp(-end_node.get_rect().size / 2, end_node.get_rect().size / 2)
 		#line_2d.points[-1] = to_local( end_position - position_on_edge )
 		line_2d.points[-1] = to_local( end_position )
 	
