@@ -13,6 +13,8 @@ func _ready() -> void:
 		note.connection_changed.connect(_on_connection_changed)
 	
 	Dialogic.signal_event.connect(queue_note)
+	$"../../UILayer/Screen/OpenPinboardButton".pressed.connect(toggle_board)
+
 
 func toggle_board():
 	if not $"..".visible:
