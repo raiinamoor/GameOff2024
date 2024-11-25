@@ -1,34 +1,102 @@
-cain_dialogic: Hey, kid, what do you want?
-- Is there drama going on? | [if {asked_cain_about_drama} == false]
-	cain_dialogic: Drama? Who's asking?
-	- Mitzie
-		cain_dialogic: Why does my sister want to know? Doesn't she know not to poke into my business?
-		- You've been worrying her.
-		cain_dialogic: Ooh, so that's why you're here. When she's worried, she doesn't like to talk to people herself.
-		cain_dialogic: J is like that, too. And some people I knew back from... well, whatever.
-		jump whatever?
-	- Me
-		cain_dialogic: You've always been nosey. Don't sniff up this path.
-		- That's mean!
-			cain_dialogic: Well, it's true, dude. J is nosey, too. Same with some people I knew back from... well, whatever.
+if {cain_met} == false:
+	cain_dialogic: Hey kid, what do you want? [signal=test]
+	- Is there drama going on? | [if {asked_cain_about_drama} == false]
+		cain_dialogic: Drama? Who's asking?
+		- Mitzie
+			cain_dialogic: Why does my sister want to know? Doesn't she know not to poke into my business?
+			- You've been worrying her.
+			cain_dialogic: Ooh, so that's why you're here. When she's worried, she doesn't like to talk to people herself.
+			cain_dialogic: J is like that, too. And some people I knew back from...
 			jump whatever?
-		- Ew, gross!
-			cain_dialogic: Heh, I like the saying. Picked it up from... well, whatever.
-			jump whatever?
-	label whatever?
-	- Whatever?
-		cain_dialogic: Yeah, whatever. I don't wanna talk about it.
-		set {3_get} = true
-		[signal arg="3_get"]
-		cain_dialogic: Don't look into what's going on with me and your Aunt J, either.
-		- So there IS drama!
-		cain_dialogic: Never said that.
-		- Didn't have to.
-		cain_dialogic: I- ugh, fine. There's something going on.
-		cain_dialogic: But that's all I wanna say, okay? Now buzz off.
-		set {4_get} = true
-		[signal arg="4_get"]
-		set {asked_cain_about_drama} = true
+		- Me
+			cain_dialogic: You've always been nosey. Don't sniff up this path.
+			- That's mean!
+				cain_dialogic: Well, it's true, dude. J is nosey, too. Same with some people I knew back from...
+				jump whatever?
+			- Ew, gross!
+				cain_dialogic: Heh, I like the saying. Picked it up from... 
+				jump whatever?
+		label whatever?
+		cain_dialogic: Well, whatever.
+		- Whatever?
+			set {notes.3_get} = true
+			[signal arg="3_get"]
+			cain_dialogic: Yeah, whatever. [b]I don't wanna talk about it.[/b]
+			cain_dialogic: Don't look into what's going on with me and your Aunt J, either.
+			- So there IS drama!
+			cain_dialogic: Never said that.
+			- Didn't have to.
+			cain_dialogic: I- ugh, fine. [b]There's something going on[/b].
+			set {notes.4_get} = true
+			[signal arg="4_get"]
+			cain_dialogic: But that's all I wanna say, okay? Now buzz off.
+			set {asked_cain_about_drama} = true
+			set {cain_met} = true
+			[end_timeline]
+cain_dialogic: What is is now?
+- When was the last time you tried covering something up? | [if {clusters.B_seen} == true and {notes.11_get} == false]
+	cain_dialogic: Covering something up? Like lying?
+	- Yep!
+		cain_dialogic: Wow, well, at least you're honest...
+	- Not exactly!
+		cain_dialogic: Oh, okay, uhh...
+	cain_dialogic: Wait, why are you asking?
+	- Don't be nosey!
+	cain_dialogic: Using my words against me, I see.
+	set {notes.11_get} = true
+	[signal arg="11_get"]
+	cain_dialogic: ...Uh, anyways, [b]I'd say, like, a week ago? I covered up about something small[/b], but a friend caught me.
+- What's your favourite meal? | [if {notes.12_get} == true and {notes.15_get} == false]
+	cain_dialogic: Uh, it's this artichoke chicken dish. 
+	set {notes.13_get} = true
+	[signal arg="13_get"]
+	cain_dialogic: J is the only one who can make it. I've tried, but [b]I'm not a good cook[/b].
+	- When did you first have it?
+	cain_dialogic: Two nights ago.
+	- Did you enjoy it?
+	cain_dialogic: Not really. I have a lot on my plate, heh.
+	set {notes.14_get} = true
+	[signal arg="14_get"]
+	cain_dialogic: I suspect that [b]J was trying to put syrup on me.[/b]
+	set {notes.15_get} = true
+	[signal arg="15_get"]
+	cain_dialogic: Uh, anyways, can you leave me alone? [b]I don't know how much I wanna talk about that night...[/b]
+- I have dog food! | [if {clusters.D_seen} == true and {gave_cain_dog_food} == false]
+	cain_dialogic: Dog food?
+	- Dog food!
+	label dog food
+	cain_dialogic: Dog food.
+	- Dog food!
+		jump dog food
+	- You want some?
+		cain_dialogic: W-what?
+		- Mitzie said-
+		cain_dialogic: SHE SAID WHAT. THAT I LIKE IT? THAT'S A BUNCHA LIES
+		- Well-
+		cain_dialogic: WHAT DID SHE SAY
+		- What you just said.
+		set {notes.25_get} = true
+		[signal arg="25_get"]
+		cain_dialogic: [b]Ffffffffffffffffudge. I messed up.[/b] Please don't tell J.
+		- I won't. Unless...
+		cain_dialogic: oh no blackmail
+		- Tell me about the box you lost.
+		cain_dialogic: Lost? Oh. That.
+		cain_dialogic: It... was a keepsake. I was given it before I left for college.
+		set {notes.23_get} = true
+		[signal arg="23_get"]
+		cain_dialogic: But I... [b]lost it.[/b] J asked me about it, and I had to say that.
+		cain_dialogic: There wasn't another way to break it to her other than to say it once Mitzie left.
+		cain_dialogic: Sigh.. I feel pretty bad about it. Saying that, I mean.
+		cain_dialogic: I need something to cheer me up...
+		- Here.
+		cain_dialogic: The dog food, huh?
+		cain_dialogic: ...Thanks, cuz. I'm a bit of a stress eater. 
+		cain_dialogic: And a messy eater. 
+		cain_dialogic: So if you could... go?
+		- Take care!
+		cain_dialogic: You too.
+		set {gave_cain_dog_food} = true
 - Uh, nothing...
 	cain_dialogic: Then buzz off!!
 	[end_timeline]
