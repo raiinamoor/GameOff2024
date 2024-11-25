@@ -13,7 +13,7 @@ var connections: Dictionary = {}
 var is_picked: bool = false
 var offset_from_mouse: Vector2 = Vector2.ZERO
 static var cursor_state = CURSOR_DEFAULT
-static var curr_connection: Node2D
+static var curr_connection: Control
 
 
 func _process(delta: float) -> void:
