@@ -8,16 +8,16 @@
 resource_local_to_scene = true
 size = Vector3(0.775146, 2.65984, 0.183838)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2xb1p"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6tw7f"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("3_xn5j5")
 shader_parameter/billboard = null
 shader_parameter/sprite_texture = ExtResource("2_k1smo")
 
-[sub_resource type="QuadMesh" id="QuadMesh_anabn"]
+[sub_resource type="QuadMesh" id="QuadMesh_4ylkl"]
 resource_local_to_scene = true
-size = Vector2(2.85, 3.72)
+size = Vector2(2.758, 3.6)
 subdivide_width = 50
 subdivide_depth = 38
 
@@ -34,6 +34,6 @@ pixel_size = 0.0015
 texture = ExtResource("2_k1smo")
 
 [node name="MeshInstance3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0452084, 0.254299, 0)
-material_override = SubResource("ShaderMaterial_2xb1p")
-mesh = SubResource("QuadMesh_anabn")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.252701, 0)
+material_override = SubResource("ShaderMaterial_6tw7f")
+mesh = SubResource("QuadMesh_4ylkl")
