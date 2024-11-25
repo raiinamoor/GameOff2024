@@ -1,17 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://7pnoxb7pntba"]
+[gd_scene load_steps=2 format=3 uid="uid://7pnoxb7pntba"]
 
 [ext_resource type="Script" path="res://Pinboard/Connections/connection.gd" id="1_fdr2v"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ifr0"]
-resource_local_to_scene = true
-
-[node name="Connection" type="Area2D"]
+[node name="Connection" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 8.0
+offset_bottom = 8.0
 script = ExtResource("1_fdr2v")
 
 [node name="Line2D" type="Line2D" parent="."]
 z_index = -1
 antialiased = true
 
-[node name="Collider" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_3ifr0")
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = -15.0
+offset_right = 15.0
+offset_bottom = 30.0
 disabled = true
+button_mask = 2
+
+[connection signal="pressed" from="Button" to="." method="remove_connection"]
