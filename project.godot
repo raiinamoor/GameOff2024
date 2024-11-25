@@ -22,11 +22,13 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"aunt_j_dialogic": "res://Characters/Aunt_J/aunt_j_dialogic.dch",
 "cain_dialogic": "res://Characters/Cain/cain_dialogic.dch",
 "mitzie_dialogic": "res://Characters/Mitzie/mitzie_dialogic.dch",
 "unit_test_character": "res://addons/Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"aunt_j_timeline": "res://Characters/Aunt_J/aunt_j_timeline.dtl",
 "cain_timeline": "res://Characters/Dialogue/Timelines/cain_timeline.dtl",
 "mitzie_timeline": "res://Characters/Dialogue/Timelines/mitzie_timeline.dtl",
 "timeline": "res://Characters/Dialogue/Timelines/timeline.dtl"
@@ -34,7 +36,39 @@ directories/dtl_directory={
 layout/style_list=["res://Characters/Dialogue/base_dialogue_style.tres", "res://Characters/Dialogue/cain_dialogue_style.tres", "res://Characters/Dialogue/mitzie_dialogue_style.tres", "res://Characters/Dialogue/aunt_j_dialogue_style.tres"]
 layout/default_style="res://Characters/Dialogue/base_dialogue_style.tres"
 variables={
+"asked_cain_about_drama": false,
+"aunt_j_met": false,
+"cain_met": false,
+"clusters": {
+"A_seen": false,
+"B_seen": true,
+"C_seen": false,
+"D_seen": false,
+"cluster_1_complete": false,
+"cluster_2_complete": false,
+"cluster_3_complete": false,
+"cluster_4_complete": false
+},
+"gave_cain_dog_food": false,
+"mitzie_met": false,
+"notes": {
+"10_get": false,
+"11_get": false,
+"12_get": false,
+"13_get": false,
+"14_get": false,
+"15_get": false,
+"16_get": false,
+"17_get": false,
+"18_get": false,
+"19_get": false,
 "1_get": false,
+"20_get": false,
+"21_get": false,
+"22_get": false,
+"23_get": false,
+"24_get": false,
+"25_get": false,
 "2_get": false,
 "3_get": false,
 "4_get": false,
@@ -42,14 +76,10 @@ variables={
 "6_get": false,
 "7_get": false,
 "8_get": false,
-"9_get": false,
-"A_seen": false,
-"B_seen": false,
-"asked_cain_about_drama": false,
-"cluster_1_complete": false,
-"cluster_2_complete": false,
-"mitzie_met": false,
-"told_mitzie_cain_admitted": false
+"9_get": false
+},
+"told_mitzie_cain_admitted": false,
+"told_mitzie_of_keepsake": false
 }
 glossary/default_case_sensitive=true
 extensions_folder="res://addons/dialogic_additions"

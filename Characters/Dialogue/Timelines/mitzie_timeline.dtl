@@ -1,63 +1,160 @@
 if {mitzie_met} == false:
 	mitzie_dialogic: I think there's something going on between the two.
 	mitzie_dialogic: Cain's been acting really strange, and J won't talk to me about it.
+	mitzie_dialogic: I don't know...
 	label first_fork
-	- How has he been strange? | [if {1_get} == false]
+	- How has he been strange? | [if {notes.1_get} == false]
 		mitzie_dialogic: He's been quiet!
 		mitzie_dialogic: Quieter than usual.
-		mitzie_dialogic: Always in his room, not really talking to me or anyone else.
-		set {1_get} = true
+		set {notes.1_get} = true
 		[signal arg="1_get"]
-	- Why won't Aunt J talk to you? | [if {2_get} == false]
-		mitzie_dialogic: Because I'm "too young". It's so annoying!
-		mitzie_dialogic: I'm always gonna be the youngest, when will she stop using it against me?!
-		set {2_get} = true
+		mitzie_dialogic: [b]Always in his room, not really talking to me or anyone else.[/b]
+	- Why won't Aunt J talk to you? | [if {notes.2_get} == false]
+		set {notes.2_get} = true
 		[signal arg="2_get"]
-	if {1_get}    ==    false or {2_get} == false:
+		mitzie_dialogic: Because I'm [b]"too young"[/b]. It's so annoying!
+		mitzie_dialogic: I'm always gonna be the youngest, when will she stop using it against me?!
+	if {notes.1_get}    ==    false or {notes.2_get} == false:
 		jump first_fork
 	set {mitzie_met} = true
+label beginning
 mitzie_dialogic: So whaddaya wanna talk about?
-- Maybe there's some sort of drama going on? | [if {cluster_1_complete} == true and {A_seen} == false]
+- Maybe there's some sort of drama going on? | [if {clusters.cluster_1_complete} == true and {clusters.A_seen} == false]
 	mitzie_dialogic: Oh, you might be on to something! Maybe there is some drama between them.
 	mitzie_dialogic: I think it might be a good idea to ask Cain!
 	mitzie_dialogic: I would ask him, but he's kinda scaring me...
-	set {A_seen} = true
+	set {clusters.A_seen} = true
 	[signal arg="unlock_cain"]
 	[end_timeline]
 - Cain said something was up! | [if {asked_cain_about_drama} == true and {told_mitzie_cain_admitted} == false]
 	mitzie_dialogic: So there IS something going on! I was right!
 	mitzie_dialogic: But, hm. What could it be?
-	mitzie_dialogic: Cain's always been a troublemaker. He probably did something bad.
-	set {5_get} = true
+	set {notes.5_get} = true
 	[signal arg="5_get"]
+	mitzie_dialogic: [b]Cain's always been a troublemaker[/b]. He probably did something bad.
 	mitzie_dialogic: But what could it have been..?
 	label what could it have been?
-	- He KILLED someone! | [if {6_get} == false]
+	- He KILLED someone! | [if {notes.6_get} == false]
 		mitzie_dialogic: Killed someone? Are you serious?
 		mitzie_dialogic: Well, Cain is mean, but he wouldn't kill anyone...
-		mitzie_dialogic:  He wouldn't be able to cover it up, anyways. He's bad at that.
-		set {6_get} = true
+		set {notes.6_get} = true
 		[signal arg="6_get"]
-	- He BROKE THE LAW! | [if {7_get} == false]
-		mitzie_dialogic: Well, maybe. He probably did something bad when he was in college.
-		set {7_get} = true
+		mitzie_dialogic: [b]He wouldn't be able to cover it up, anyways.[/b] He's bad at that.
+	- He BROKE THE LAW! | [if {notes.7_get} == false]
+		set {notes.7_get} = true
 		[signal arg="7_get"]
-		set {8_get} = true
+		set {notes.8_get} = true
 		[signal arg="8_get"]
-	if {6_get} == false or {7_get} == false:
+		mitzie_dialogic: Well, maybe. He probably did something bad when [b]he was in college[/b].
+	if {notes.6_get} == false or {notes.7_get} == false:
 		jump what could it have been?
 	set {told_mitzie_cain_admitted} = true
 	[end_timeline]
-- Cain got caught! | [if {B_seen} == false]
+- Cain got caught! | [if {clusters.cluster_2_complete} == true and {clusters.B_seen} == false]
 	mitzie_dialogic: Caught? Caught doing what?
 	- Something bad!
 	mitzie_dialogic: Oh, like he tried covering something up, but got caught after that?
-	mitzie_dialogic: That's happened before, so I wouldn't be surprised if he did it again.
-	set {9_get} = true
+	set {notes.9_get} = true
 	[signal arg="9_get"]
+	mitzie_dialogic: [b]That's happened before[/b], so I wouldn't be surprised if he did it again.
 	- What was it?
 	mitzie_dialogic: Well, which time? It's happened a lot.
 	mitzie_dialogic: J can probably tell you the last time it's happened if you ask her.
-	set {B_seen} = true
+	set {clusters.B_seen} = true
+- One of them is lying. | [if {clusters.cluster_3_complete} == true and {notes.12_get} == false]
+	mitzie_dialogic: What? You asked both of them?
+	- Aunt J said 2 days ago.
+		mitzie_dialogic: Oh, and I'm guessing Cain said something else, huh?
+		- Do you remember anything?
+		mitzie_dialogic: Well, sadly... no. 
+		mitzie_dialogic: But! I remembered something else!
+	- Cain said a week ago.
+		mitzie_dialogic: Oh, and I'm guessing mom said something else, huh?
+		- She said two days ago.
+		mitzie_dialogic: Oh! That fits something that I remember!
+	set {notes.12_get} == true
+	[signal arg="12_get"]
+	mitzie_dialogic: [b]A few nights ago, we had Cain's favorite meal.[/b] We haven't had it in ages!
+	mitzie_dialogic: But Cain didn't seem super happy about it, and mom was asking him a lot of questions.
+	mitzie_dialogic: I don't remember much, but I bet if you ask him you can get some answers!
+	[end_timeline]
+- What do you know about Cain's cooking? | [if {notes.15_get} == true and {notes.21_get} == false]
+	mitzie_dialogic: Oh, his cooking SUCKS!!!!
+	mitzie_dialogic: This one time, he tried to make us chicken and artichoke. 
+	mitzie_dialogic: He bought beef instead of chicken.
+	mitzie_dialogic: I remember mom talking to him about it "How do you get them wrong?", stuff like that. 
+	mitzie_dialogic: It's not like mom tells him what the recipe is, though.
+	set {notes.20_get} = true
+	[signal arg="20_get"]
+	mitzie_dialogic: Now that I think about it, [b]that's probably why mom made that for dinner, so he can see how it's made[/b], or something?
+	set {notes.21_get} = true
+	[signal arg="21_get"]
+	mitzie_dialogic: In any case, [b]Cain is weak when it comes to food[/b]. He'll admit to just about anything when bribed with something good.
+	jump beginning
+- What happened when you had Cain's favourite meal? | [if {notes.15_get} == true and {notes.19_get} == false]
+	mitzie_dialogic: Uh, didn't I tell you?
+	- I mean exactly.
+	mitzie_dialogic: Oh, like what they talked about?
+	mitzie_dialogic: Well, mom said something about a box. Then Cain was being all dodgy about the question.
+	- Dodgy?
+		mitzie_dialogic: Yeah, I don't know why. Maybe he lost the box or something.
+		- A box?
+		mitzie_dialogic: Yeah! I dunno what makes a box so important, unless there was something cool inside.
+		jump either way
+	- A box?
+		mitzie_dialogic: Yeah! I dunno what makes a box so important, unless there was something cool inside.
+		- Dodgy?
+		mitzie_dialogic: Yeah, I don't know why. Maybe he lost the box or something.
+		jump either way
+	label either way
+	set {notes.19_get} = true
+	[signal arg="19_get"]
+	mitzie_dialogic: Either way, mom told me I could be excused after that, so I left. [b]But things were different when I came back...[/b]
+	jump beginning
+- What does it mean to put syrup on someone? | [if {notes.15_get} == true and {notes.16_get} == false]
+	mitzie_dialogic: Uh, what?
+	set {notes.16_get} = true
+	[signal arg="16_get"]
+	mitzie_dialogic: [b]Probably to make someone sticky? Or to make them smell good?[/b] I don't know.
+	mitzie_dialogic: Did Cain say that?
+	- Yep.
+	mitzie_dialogic: Yeah, he says strange things only he would know the meaning of.
+- I have a thought... | [if {clusters.cluster_4_complete} == true and {clusters.D_seen} == false]
+	mitzie_dialogic: Spill da beans, cuz!
+	- I think Cain was being bribed.
+	mitzie_dialogic: Bribed? By who?
+	- Aunt J!
+	mitzie_dialogic: Oh... so the chicken artichoke dinner was to bribe Cain into saying something!
+	- To get him to talk about that box!
+	mitzie_dialogic: Wow, cuz! I think you've got it!
+	mitzie_dialogic: Well, now we just gotta get Cain or mom to admit it. I know mom won't but...
+	mitzie_dialogic: Here, grab this!
+	- What is this?
+	mitzie_dialogic: Dog food.
+	- Dog food?
+	mitzie_dialogic: Dog food!
+	set {notes.22_get} = true
+	[signal arg="22_get"]
+	mitzie_dialogic: Let me tell you a secret: [b]Cain actually loves this stuff.[/b]
+	mitzie_dialogic: Dog food smells so good, especially flavored food. One time Cain tried a bite and now it's a guilty pleasure of his.
+	- That's gross!
+		mitzie_dialogic: It isn't, actually. Sometimes, dog food is quite tasty. 
+		mitzie_dialogic: D-don't ask how I know, though.
+	- That's funny!
+		mitzie_dialogic: I know, right? 
+		mitzie_dialogic: But.. don't tell mom. She'll go wondering why she needs to buy so much dog food.
+	mitzie_dialogic: Anyhow, you should go give Cain the dog food. Maybe you'll learn something!
+	set {clusters.D_seen} = true
+	[end_timeline]
+- He lost a keepsake. | [if {gave_cain_dog_food} == true and {told_mitzie_of_keepsake} == false]
+	mitzie_dialogic: A keepsake? Wait, could it have been...
+	mitzie_dialogic: Was it the one he was given before college?
+	- Yeah.
+	mitzie_dialogic: Oh, no... Cain...
+	mitzie_dialogic: But.. how did he lose it?
+	- He never said.
+	mitzie_dialogic: Hm... Mom probably knows. 
+	set {told_mitzie_of_keepsake} = true
+	[end_timeline]
 - Nothing!
 	[end_timeline]
