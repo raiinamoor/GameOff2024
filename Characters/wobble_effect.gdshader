@@ -1,7 +1,7 @@
 shader_type spatial;
 
 const float NOISE_VALUE = 0.015;
-const float REPEAT_VALUE = 1.2;
+const float REPEAT_VALUE = 2.1;
 uniform sampler2D sprite_texture : source_color, filter_nearest;
 uniform vec3 billboard;
 
