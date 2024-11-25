@@ -64,6 +64,40 @@ func unpause():
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_4y2wq"]
 
+[sub_resource type="GDScript" id="GDScript_l5o3n"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	Dialogic.signal_event.connect(display_note)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func display_note(arg_str: String):
+	if arg_str.contains(\"_get\"):
+		var number = arg_str.replace(\"_get\", \"\")
+		var note: Button = %BoardLayer.find_child(number).duplicate()
+		note.disabled = true
+		note.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		add_child(note)
+		note.position = Vector2(0, 0)
+		note.modulate.a = 0
+		var t: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT).set_parallel()
+		t.tween_property(note, \"modulate:a\", 1, 3)
+		t.tween_property(note, \"position:y\", -30 , 3)
+		await t.finished
+		t = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT).set_parallel()
+		t.tween_property(note, \"global_position\", %OpenPinboardButton.global_position, 1)
+		t.tween_property(note, \"scale\", Vector2(0.1, 0.1), 2)
+		await t.finished
+		note.queue_free()
+"
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_jjht5")
 
@@ -237,6 +271,20 @@ text = "CONTINUE"
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 text = "MAIN MENU"
+
+[node name="NoteDisplay" type="VBoxContainer" parent="UILayer/Screen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.793
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+script = SubResource("GDScript_l5o3n")
 
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource("4_8ma02")
