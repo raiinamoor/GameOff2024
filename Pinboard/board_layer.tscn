@@ -1,8 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://basecxo85ojpp"]
+[gd_scene load_steps=11 format=3 uid="uid://basecxo85ojpp"]
 
 [ext_resource type="Script" path="res://Pinboard/pin_board.gd" id="1_c2mbc"]
 [ext_resource type="PackedScene" uid="uid://cmho6kjep4bs2" path="res://Pinboard/Notes/note.tscn" id="2_b4mnt"]
 [ext_resource type="Texture2D" uid="uid://02xo75veel6g" path="res://Pinboard/Pinboard.png" id="2_hlprf"]
+[ext_resource type="Texture2D" uid="uid://0dcifboh2la5" path="res://Pinboard/Notes/Note_sprite5.png" id="4_3lfsh"]
+[ext_resource type="Texture2D" uid="uid://76axtyf5j37c" path="res://Pinboard/Notes/Note_sprite1.png" id="5_e85k2"]
+[ext_resource type="Texture2D" uid="uid://cicpg7qbt3f6y" path="res://Pinboard/Notes/Note_sprite6.png" id="6_i4idj"]
+[ext_resource type="Texture2D" uid="uid://3ppbw1k8sppq" path="res://Pinboard/Notes/Note_sprite3.png" id="7_esyaa"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wvuv4"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/Note_sprite3.png-ad506fcea406f71472dc7305a62c5904.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wgr8h"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/Note_sprite3.png-ad506fcea406f71472dc7305a62c5904.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v2yj6"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/Note_sprite3.png-ad506fcea406f71472dc7305a62c5904.ctex"
 
 [node name="BoardLayer" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -41,28 +57,270 @@ texture = ExtResource("2_hlprf")
 
 [node name="1" parent="PinBoard" instance=ExtResource("2_b4mnt")]
 layout_mode = 0
-offset_left = 857.0
-offset_top = 858.0
-offset_right = 1037.0
-offset_bottom = 938.0
+offset_left = 625.0
+offset_top = 1728.0
+offset_right = 893.0
+offset_bottom = 1808.0
+text = "Cain has been 
+quieter than usual."
+icon = ExtResource("4_3lfsh")
 
 [node name="2" parent="PinBoard" instance=ExtResource("2_b4mnt")]
 layout_mode = 0
-offset_left = 1299.0
-offset_top = 738.0
-offset_right = 1479.0
-offset_bottom = 818.0
+offset_left = 1013.0
+offset_top = 1746.0
+offset_right = 1269.0
+offset_bottom = 1826.0
+text = "Aunt J won't talk to Mitzie
+about what's going on 
+because she's \"too young\"."
+icon = ExtResource("5_e85k2")
 
 [node name="3" parent="PinBoard" instance=ExtResource("2_b4mnt")]
 layout_mode = 0
-offset_left = 1088.0
-offset_top = 681.0
-offset_right = 1268.0
-offset_bottom = 761.0
+offset_left = 931.0
+offset_top = 1233.0
+offset_right = 1325.0
+offset_bottom = 1507.0
+text = "Cain was remembering 
+something, but didn't talk 
+about what it was. "
+icon = ExtResource("6_i4idj")
 
 [node name="4" parent="PinBoard" instance=ExtResource("2_b4mnt")]
 layout_mode = 0
-offset_left = 904.0
-offset_top = 626.0
-offset_right = 1084.0
-offset_bottom = 706.0
+offset_left = 1206.0
+offset_top = 1472.0
+offset_right = 1513.0
+offset_bottom = 1552.0
+text = "There's some sort of drama 
+happening between 
+Cain and Aunt J."
+icon = ExtResource("5_e85k2")
+
+[node name="5" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 1202.0
+offset_top = 1620.0
+offset_right = 1618.0
+offset_bottom = 1912.0
+text = "Cain has always been a 
+troublemaker.  That must be 
+what caused the drama."
+icon = ExtResource("7_esyaa")
+
+[node name="6" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 1243.0
+offset_right = 871.0
+offset_bottom = 1554.0
+text = "Cain is bad at 
+covering stuff up."
+icon = ExtResource("4_3lfsh")
+
+[node name="7" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 1458.0
+offset_right = 875.0
+offset_bottom = 1750.0
+text = "Right, Cain was in college!"
+icon = ExtResource("7_esyaa")
+
+[node name="8" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 878.0
+offset_top = 1412.0
+offset_right = 1121.0
+offset_bottom = 1492.0
+text = "Cain might have done 
+something bad 
+in college."
+icon = ExtResource("5_e85k2")
+
+[node name="9" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 989.0
+offset_right = 1253.0
+offset_bottom = 1069.0
+text = "Cain has gotten caught 
+after covering something up 
+before. Who's to say 
+he didn't do it again?"
+icon = ExtResource("7_esyaa")
+
+[node name="10" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 1144.0
+offset_top = 849.0
+offset_right = 1421.0
+offset_bottom = 929.0
+text = "According to Aunt J, 
+Cain was last caught doing 
+something bad two days ago."
+icon = SubResource("CompressedTexture2D_wvuv4")
+
+[node name="11" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 1346.0
+offset_top = 1053.0
+offset_right = 1623.0
+offset_bottom = 1133.0
+text = "Cain said that he covered 
+something up a week ago."
+icon = ExtResource("5_e85k2")
+
+[node name="12" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 1572.0
+offset_top = 797.0
+offset_right = 1849.0
+offset_bottom = 877.0
+text = "Cain, Mitzie and Aunt J 
+had Cain's favorite meal 
+a couple of nights ago."
+icon = SubResource("CompressedTexture2D_wgr8h")
+
+[node name="13" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 1659.0
+offset_top = 638.0
+offset_right = 1936.0
+offset_bottom = 718.0
+text = "Cain isn't a good cook."
+icon = ExtResource("5_e85k2")
+
+[node name="14" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 1891.0
+offset_top = 996.0
+offset_right = 2285.0
+offset_bottom = 1270.0
+text = "Cain thinks Aunt J was 
+trying to \"put syrup on him\" 
+by having his favorite meal."
+icon = ExtResource("6_i4idj")
+
+[node name="15" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 1918.0
+offset_top = 796.0
+offset_right = 2195.0
+offset_bottom = 876.0
+text = "Cain doesn't want to talk 
+about what happened 
+two nights ago."
+icon = ExtResource("7_esyaa")
+
+[node name="16" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 2031.0
+offset_top = 1179.0
+offset_right = 2308.0
+offset_bottom = 1259.0
+text = "Mitzie thinks \"putting syrup 
+on someone\" means to make 
+them sticky or smell good."
+icon = ExtResource("4_3lfsh")
+
+[node name="17" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 2267.0
+offset_top = 988.0
+offset_right = 2701.0
+offset_bottom = 1280.0
+text = "Aunt J thinks \"putting syrup 
+on someone\" means 
+to sweeten them up."
+icon = SubResource("CompressedTexture2D_v2yj6")
+
+[node name="18" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 2259.0
+offset_top = 795.0
+offset_right = 2587.0
+offset_bottom = 875.0
+text = "Something important 
+happened two nights ago, 
+when 
+they had dinner."
+icon = ExtResource("7_esyaa")
+
+[node name="19" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 2659.0
+offset_top = 821.0
+offset_right = 3109.0
+offset_bottom = 921.0
+text = "Mitzie says that Aunt J 
+and Cain talked about a box 
+during dinner, and that Cain 
+was being dodgy about it. 
+She thinks that Cain lost it, 
+or the thing that was inside it."
+icon = ExtResource("4_3lfsh")
+
+[node name="20" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 1109.0
+offset_top = 559.0
+offset_right = 1559.0
+offset_bottom = 659.0
+text = "Cain tried to make his 
+favorite dish one time, 
+but failed.
+Aunt J made it instead."
+icon = ExtResource("7_esyaa")
+
+[node name="21" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 1981.0
+offset_top = 550.0
+offset_right = 2431.0
+offset_bottom = 650.0
+text = "Cain can easily be 
+bribed by food."
+icon = ExtResource("5_e85k2")
+
+[node name="22" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 2483.0
+offset_top = 516.0
+offset_right = 2773.0
+offset_bottom = 616.0
+text = "Cain secretly likes dog food!"
+icon = ExtResource("4_3lfsh")
+
+[node name="23" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 2850.0
+offset_top = 1464.0
+offset_right = 3244.0
+offset_bottom = 1738.0
+text = "Cain was given a keepsake 
+before college, but he lost it."
+icon = ExtResource("6_i4idj")
+
+[node name="24" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 2430.0
+offset_top = 1533.0
+offset_right = 2720.0
+offset_bottom = 1633.0
+text = "Aunt J knows how Cain 
+lost the lockbox, but 
+won't tell me until 
+I say who told me."
+icon = ExtResource("6_i4idj")
+
+[node name="25" parent="PinBoard" instance=ExtResource("2_b4mnt")]
+layout_mode = 0
+offset_left = 2448.0
+offset_top = 1267.0
+offset_right = 2825.0
+offset_bottom = 1578.0
+text = "Cain doesn't want me 
+to tell Aunt J that he told me."
+icon = ExtResource("4_3lfsh")
