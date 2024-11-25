@@ -1,23 +1,70 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmho6kjep4bs2"]
+[gd_scene load_steps=12 format=3 uid="uid://cmho6kjep4bs2"]
 
 [ext_resource type="Texture2D" uid="uid://3b0iur3gcne0" path="res://icon.svg" id="1_4j8bh"]
+[ext_resource type="FontFile" uid="uid://dv3ixxtjdhthb" path="res://Fonts/MORE-SUGAR.THIN.TTF" id="1_5y3ei"]
 [ext_resource type="Script" path="res://Pinboard/Notes/note.gd" id="2_84h03"]
 [ext_resource type="PackedScene" uid="uid://7pnoxb7pntba" path="res://Pinboard/Connections/connection.tscn" id="3_q785b"]
 
-[sub_resource type="Gradient" id="Gradient_fit8c"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(1, 1, 1, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8r6ad"]
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_28108"]
-gradient = SubResource("Gradient_fit8c")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c8cqs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0jrnq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6pod7"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rl5mc"]
+
+[sub_resource type="Theme" id="Theme_ycqjp"]
+Button/colors/font_color = Color(0.19435, 0.194349, 0.194349, 1)
+Button/colors/font_disabled_color = Color(0.196078, 0.196078, 0.196078, 1)
+Button/colors/font_focus_color = Color(0.196078, 0.196078, 0.196078, 1)
+Button/colors/font_hover_color = Color(0.196078, 0.196078, 0.196078, 1)
+Button/colors/font_hover_pressed_color = Color(0.196078, 0.196078, 0.196078, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.196078, 0.196078, 0.196078, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 1)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_5y3ei")
+Button/styles/disabled = SubResource("StyleBoxEmpty_8r6ad")
+Button/styles/focus = SubResource("StyleBoxEmpty_c8cqs")
+Button/styles/hover = SubResource("StyleBoxEmpty_0jrnq")
+Button/styles/normal = SubResource("StyleBoxFlat_6pod7")
+Button/styles/pressed = SubResource("StyleBoxEmpty_rl5mc")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l81dh"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/Note_sprite3.png-ad506fcea406f71472dc7305a62c5904.ctex"
 
 [node name="Note" type="Button" groups=["notes"]]
-custom_minimum_size = Vector2(180, 80)
 offset_right = 180.0
 offset_bottom = 80.0
 pivot_offset = Vector2(68, 68)
 size_flags_horizontal = 0
 mouse_default_cursor_shape = 7
+theme = SubResource("Theme_ycqjp")
+text = "some text"
+icon = SubResource("CompressedTexture2D_l81dh")
+flat = true
 icon_alignment = 1
 script = ExtResource("2_84h03")
 connection_scn = ExtResource("3_q785b")
@@ -25,9 +72,10 @@ connection_scn = ExtResource("3_q785b")
 [node name="ButtonPanel" type="Control" parent="."]
 z_index = -1
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.25
+anchor_top = 0.1
+anchor_right = 0.75
+anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -44,6 +92,7 @@ offset_right = 36.0
 offset_bottom = 18.0
 grow_vertical = 2
 mouse_filter = 1
+mouse_default_cursor_shape = 2
 icon = ExtResource("1_4j8bh")
 flat = true
 expand_icon = true
@@ -62,6 +111,7 @@ offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+mouse_default_cursor_shape = 2
 icon = ExtResource("1_4j8bh")
 flat = true
 expand_icon = true
@@ -79,19 +129,12 @@ offset_bottom = 18.0
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 1
+mouse_default_cursor_shape = 2
 icon = ExtResource("1_4j8bh")
 flat = true
 expand_icon = true
 
-[node name="Background" type="NinePatchRect" parent="."]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture1D_28108")
+[node name="Node" type="Node" parent="."]
 
 [connection signal="button_down" from="." to="." method="pick_up"]
 [connection signal="button_up" from="." to="." method="put_down"]

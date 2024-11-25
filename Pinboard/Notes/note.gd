@@ -80,17 +80,25 @@ func display_as_completed() -> void:
 
 
 func pick_up() -> void:
+	hide_buttons()
+	var t: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
+	t.tween_property(self, "scale", Vector2(1.2, 1.2), 0.3)
 	is_picked = true
 	offset_from_mouse = position - get_global_mouse_position()
 	mouse_default_cursor_shape = CursorShape.CURSOR_DRAG
 
 
 func put_down() -> void:
+	var t: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
+	t.tween_property(self, "scale", Vector2(1, 1), 0.3)
 	is_picked = false
 	mouse_default_cursor_shape = CursorShape.CURSOR_CAN_DROP
 
 
 func show_buttons() -> void:
+	if is_picked:
+		return
+	
 	#$AnimationPlayer.play("show_connection_buttons")
 	$ButtonPanel.visible = true
 	var t: Tween = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT)
