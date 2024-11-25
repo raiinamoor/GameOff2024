@@ -6,7 +6,10 @@
 
 [sub_resource type="Resource" id="Resource_6omea"]
 script = ExtResource("2_wgq8w")
-overrides = {}
+overrides = {
+"global_bg_color": "Color(0.223175, 0.554688, 0.321593, 0.9)",
+"global_font_color": "Color(0.0709534, 0.0787258, 0.195313, 1)"
+}
 
 [sub_resource type="Resource" id="Resource_tuulo"]
 script = ExtResource("2_wgq8w")
@@ -22,7 +25,10 @@ overrides = {}
 
 [sub_resource type="Resource" id="Resource_qd8kq"]
 script = ExtResource("2_wgq8w")
-overrides = {}
+overrides = {
+"typing_sounds_pitch": "1.12",
+"typing_sounds_sounds_folder": "\"res://Characters/Aunt_J/Voice\""
+}
 
 [sub_resource type="Resource" id="Resource_f8gy1"]
 script = ExtResource("2_wgq8w")
