@@ -60,7 +60,9 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_wu2pp"]
 script = ExtResource("1_kpasf")
 scene = ExtResource("7_31ecw")
-overrides = {}
+overrides = {
+"text_color_use_global": "false"
+}
 
 [sub_resource type="Resource" id="Resource_nq3ek"]
 script = ExtResource("1_kpasf")
@@ -89,4 +91,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_kpasf")]([])
-metadata/_latest_layer = "13"
+metadata/_latest_layer = "15"
