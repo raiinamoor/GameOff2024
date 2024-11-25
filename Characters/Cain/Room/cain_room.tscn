@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bk4f8p2wnadwc" path="res://Characters/Cain/Cain_room.dae" id="1_3ipsr"]
 [ext_resource type="Script" path="res://Player/camera_rotation.gd" id="2_vxxqf"]
-[ext_resource type="PackedScene" uid="uid://25i1u3vpynft" path="res://Characters/Cain/cain.tscn" id="3_vkkjy"]
+[ext_resource type="PackedScene" uid="uid://6md88g6bukjo" path="res://Characters/Cain/cain.tscn" id="3_vkkjy"]
 
 [sub_resource type="Environment" id="Environment_2kxt1"]
 background_energy_multiplier = 3.0
