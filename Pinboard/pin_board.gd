@@ -2,6 +2,7 @@ extends Control
 
 
 @export var clusters: Array[Dictionary]
+var queued_notes: Array[Button] = []
 @onready var notes: Array[Node] = get_tree().get_nodes_in_group("notes")
 @onready var cluster_flags: Array[bool] = []
 
@@ -10,10 +11,45 @@ func _ready() -> void:
 		cluster_flags.append(false)
 	for note in get_tree().get_nodes_in_group("notes"):
 		note.connection_changed.connect(_on_connection_changed)
+	
+	Dialogic.signal_event.connect(queue_note)
+
+func toggle_board():
+	if not $"..".visible:
+		show_board()
+	else:
+		hide_board()
 
 
-func _process(delta: float) -> void:
-	pass
+func show_board() -> void:
+	$"..".visible = true
+	var t: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
+	t.tween_property(self, "position:y", 0, 1)
+	await t.finished
+	
+	update_board()
+
+
+func hide_board():
+	#camera.zoom = Vector2(1, 1)
+	var t: Tween = create_tween()
+	t.tween_property(camera_2d, "zoom", Vector2(0.5, 0.5), 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
+	t.tween_property(self, "position:y", -$BG.size.y, 1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
+	await t.finished
+	
+	$"..".visible = false
+
+
+func update_board():
+	for note in queued_notes:
+		note.reveal()
+	queued_notes.clear()
+
+
+func queue_note(dialogic_arg: String):
+	if dialogic_arg.contains("_get"):
+		var idx: String = dialogic_arg.replace("_get", "")
+		queued_notes.append( get_node(idx) )
 
 
 func _on_connection_changed(n: Button) -> void:
