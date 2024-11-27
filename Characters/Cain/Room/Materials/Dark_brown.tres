@@ -4,6 +4,7 @@
 resource_name = "Dark_brown"
 cull_mode = 2
 diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(0.1784, 0.096206, 0.052628, 1)
 metallic_specular = 0.0
-roughness = 0.01
+roughness = 0.0

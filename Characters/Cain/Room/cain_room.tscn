@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://6md88g6bukjo" path="res://Characters/Cain/cain.tscn" id="3_vkkjy"]
 
 [sub_resource type="Environment" id="Environment_2kxt1"]
-background_energy_multiplier = 3.0
+background_energy_multiplier = 6.0
+reflected_light_source = 1
 
 [node name="CainRoom" type="Node3D"]
 script = ExtResource("1_xjckj")

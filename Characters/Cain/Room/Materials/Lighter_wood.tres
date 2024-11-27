@@ -4,6 +4,7 @@
 resource_name = "Lighter_wood"
 cull_mode = 2
 diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(0.4, 0.26216, 0.1256, 1)
 metallic_specular = 0.0
-roughness = 0.01
+roughness = 0.1
