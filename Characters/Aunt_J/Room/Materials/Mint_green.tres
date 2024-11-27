@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b8e0fl24f3qwy"]
+
+[resource]
+resource_name = "Mint_green"
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.432402, 0.536941, 0.489355, 1)
+metallic_specular = 0.0
+roughness = 0.0

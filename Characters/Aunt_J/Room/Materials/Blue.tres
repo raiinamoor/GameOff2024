@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://g7ibj8nxbwi1"]
+
+[resource]
+resource_name = "Blue"
+diffuse_mode = 3
+specular_mode = 2
+albedo_color = Color(0.429883, 0.44473, 0.63489, 1)
+metallic_specular = 0.0
+roughness = 0.0

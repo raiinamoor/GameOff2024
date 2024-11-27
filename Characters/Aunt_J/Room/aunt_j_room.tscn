@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://donhn7hrb2wu0"]
+
+[ext_resource type="Script" path="res://Player/camera_rotation.gd" id="1_5genm"]
+[ext_resource type="Script" path="res://Characters/room_logic.gd" id="1_i2m5i"]
+[ext_resource type="PackedScene" uid="uid://b1drix4rll7h6" path="res://Characters/Aunt_J/aunt_j.tscn" id="2_1d3t4"]
+[ext_resource type="PackedScene" uid="uid://u3digpdra7ih" path="res://Characters/Aunt_J/Room/Aunt_J_room.fbx" id="2_4omy7"]
+
+[sub_resource type="Environment" id="Environment_1p3t5"]
+background_mode = 1
+background_color = Color(0.32793, 0.297235, 0.27241, 1)
+background_energy_multiplier = 8.0
+ambient_light_color = Color(0.674304, 0.809386, 0.865635, 1)
+ambient_light_sky_contribution = 0.0
+
+[node name="AuntJRoom" type="Node3D"]
+script = ExtResource("1_i2m5i")
+
+[node name="Aunt_J_room" parent="." instance=ExtResource("2_4omy7")]
+transform = Transform3D(70, 0, 0, 0, 70, 0, 0, 0, 70, 0, 0, 0)
+
+[node name="AuntJ" parent="." instance=ExtResource("2_1d3t4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.679852, 1.22355, -0.0531217)
+
+[node name="PlayerCamera" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.803098, 0.145046, -0.577923, -2.98319e-09, 0.969919, 0.243429, 0.595846, -0.195497, 0.77894, -1.50187, 2.51692, 1.95829)
+fov = 60.0
+script = ExtResource("1_5genm")
+horizontal_limit_deg = 30
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1p3t5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.507479, 0.520698, -0.686542, 2.20686e-08, 0.796762, 0.604293, 0.861664, 0.306666, -0.404339, 0, 9.24825, 0)
+sky_mode = 1

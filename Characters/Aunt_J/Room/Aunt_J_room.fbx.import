@@ -1,0 +1,96 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://u3digpdra7ih"
+path="res://.godot/imported/Aunt_J_room.fbx-90123dab1062d4d662f3c0216d4150fd.scn"
+
+[deps]
+
+source_file="res://Characters/Aunt_J/Room/Aunt_J_room.fbx"
+dest_files=["res://.godot/imported/Aunt_J_room.fbx-90123dab1062d4d662f3c0216d4150fd.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Beige": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Aunt_J/Room/Materials/Beige.tres"
+},
+"Black": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Aunt_J/Room/Materials/Black.tres"
+},
+"Blackstest": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Aunt_J/Room/Materials/Blackstest.tres"
+},
+"Blue": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Aunt_J/Room/Materials/Blue.tres"
+},
+"Dark_brown": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Aunt_J/Room/Materials/Dark_brown.tres"
+},
+"Dark_grey": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Aunt_J/Room/Materials/Dark_grey.tres"
+},
+"Light_beige": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Aunt_J/Room/Materials/Light_beige.tres"
+},
+"Light_red": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Aunt_J/Room/Materials/Light_red.tres"
+},
+"Mint_green": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Aunt_J/Room/Materials/Mint_green.tres"
+},
+"Red": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Aunt_J/Room/Materials/Red.tres"
+},
+"Silver": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Aunt_J/Room/Materials/Silver.tres"
+},
+"Yellow": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Aunt_J/Room/Materials/Yellow.tres"
+},
+"lambert30": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Aunt_J/Room/Materials/lambert30.tres"
+},
+"redder_red": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Aunt_J/Room/Materials/redder_red.tres"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

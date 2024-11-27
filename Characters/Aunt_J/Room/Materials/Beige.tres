@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://1t5xorqrq36v"]
+
+[resource]
+resource_name = "Beige"
+diffuse_mode = 3
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.701691, 0.579545, 0.411988, 1)
+metallic_specular = 0.0
+roughness = 0.0
