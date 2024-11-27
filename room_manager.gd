@@ -11,7 +11,7 @@ var aunt_j_unlocked: bool = true
 	"aunt_j": aunt_j_room
 }
 # TODO make only mitzie's room available at start
-@onready var available_rooms: Array[Node3D] = [mitzie_room, cain_room, aunt_j_room]
+@onready var available_rooms: Array[Node3D] = [mitzie_room]
 @onready var curr_room_idx: int = 0:
 	set(value):
 		if value < 0:
@@ -38,6 +38,8 @@ func move_left():
 
 
 func unlock_room(arg_str: String):
-	if arg_str.contains("unlock_room_"):
-		var name: String = arg_str.replace("unlock_room_", "")
+	if arg_str.contains("unlock_"):
+		var name: String = arg_str.replace("unlock_", "")
 		available_rooms.append(rooms[name])
+		$"../UILayer/Screen/MoveLeftButton".visible = true
+		$"../UILayer/Screen/MoveRightButton".visible = true

@@ -110,6 +110,8 @@ func return_to_main_menu():
 script = ExtResource("1_jjht5")
 
 [node name="RoomManager" type="Node3D" parent="."]
+unique_name_in_owner = true
+visible = false
 script = ExtResource("2_rfi6o")
 
 [node name="MitzieRoom" parent="RoomManager" instance=ExtResource("2_wj121")]
