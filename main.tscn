@@ -10,6 +10,50 @@
 [ext_resource type="AudioStream" uid="uid://qj2xd8wcevmf" path="res://Music/A4.wav" id="5_5wwdd"]
 [ext_resource type="Texture2D" uid="uid://cly0v8g432gtm" path="res://UI/Screen change arrow.png" id="7_kqyts"]
 [ext_resource type="Texture2D" uid="uid://cquardifuqlem" path="res://UI/Pinboard icon.png" id="8_j3c7x"]
+[ext_resource type="Theme" uid="uid://dgbn7lf6l0n80" path="res://UI/ui_theme.tres" id="9_im0ob"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sd3uo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4vcd1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xkqgh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dicpy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s25q3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nptbk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0gcim"]
+texture = ExtResource("7_kqyts")
+modulate_color = Color(1, 1, 1, 0.615686)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2fgf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4sdrg"]
+texture = ExtResource("7_kqyts")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_arih1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ale52"]
+texture = ExtResource("7_kqyts")
+modulate_color = Color(1, 1, 1, 0.27451)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_40qvw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_awqle"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0yipk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flhil"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eilhb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ctqf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gkqiq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o1r0w"]
 
 [sub_resource type="GDScript" id="GDScript_evtwv"]
 script/source = "extends Control
@@ -117,6 +161,8 @@ func unpause():
 func return_to_main_menu():
 	is_enabled = false
 "
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4y2wq"]
 [node name="Main" type="Node3D"]
 script = ExtResource("1_jjht5")
 
@@ -219,6 +265,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("9_im0ob")
 script = SubResource("GDScript_evtwv")
 
 [node name="TextureRect" type="TextureRect" parent="UILayer/Screen/MainMenu"]
@@ -293,6 +340,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("9_im0ob")
 script = SubResource("GDScript_8gsmx")
 
 [node name="TextureRect" type="TextureRect" parent="UILayer/Screen/PauseMenu"]
@@ -318,7 +366,7 @@ offset_right = 237.0
 offset_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 50
 
 [node name="ContinueButton" type="Button" parent="UILayer/Screen/PauseMenu/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
