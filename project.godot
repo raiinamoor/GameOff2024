@@ -28,8 +28,9 @@ directories/dch_directory={
 "unit_test_character": "res://addons/Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
-"aunt_j_timeline": "res://Characters/Aunt_J/aunt_j_timeline.dtl",
+"aunt_j_timeline": "res://Characters/Dialogue/Timelines/aunt_j_timeline.dtl",
 "cain_timeline": "res://Characters/Dialogue/Timelines/cain_timeline.dtl",
+"intro_timeline": "res://Characters/intro_timeline.dtl",
 "mitzie_timeline": "res://Characters/Dialogue/Timelines/mitzie_timeline.dtl",
 "timeline": "res://Characters/Dialogue/Timelines/timeline.dtl"
 }
@@ -41,7 +42,7 @@ variables={
 "cain_met": false,
 "clusters": {
 "A_seen": false,
-"B_seen": true,
+"B_seen": false,
 "C_seen": false,
 "D_seen": false,
 "cluster_1_complete": false,
@@ -78,6 +79,7 @@ variables={
 "8_get": false,
 "9_get": false
 },
+"pinboard_unlocked": false,
 "told_mitzie_cain_admitted": false,
 "told_mitzie_of_keepsake": false
 }
