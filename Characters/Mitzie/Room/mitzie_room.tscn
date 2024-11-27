@@ -1,13 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2cs55gwxv0gt"]
+[gd_scene load_steps=7 format=3 uid="uid://c2cs55gwxv0gt"]
 
 [ext_resource type="Script" path="res://Characters/room_logic.gd" id="1_iwooj"]
 [ext_resource type="Script" path="res://Player/camera_rotation.gd" id="1_tk2wn"]
 [ext_resource type="PackedScene" uid="uid://umt4dqc3bwvo" path="res://Characters/Mitzie/mitzie.tscn" id="2_0iyqx"]
 [ext_resource type="PackedScene" uid="uid://uxsl83xkgx30" path="res://Characters/Mitzie/Room/Mitzie_room.dae" id="3_h0c6p"]
+[ext_resource type="PackedScene" uid="uid://bcmcibhgbqtji" path="res://addons/godot_plush/godot_plush_sitting.glb" id="5_frmcm"]
 
 [sub_resource type="Environment" id="Environment_m8k14"]
 background_color = Color(0.624055, 0.431919, 0.316754, 1)
-background_energy_multiplier = 6.0
+background_energy_multiplier = 8.0
 adjustment_enabled = true
 
 [node name="MitzieRoom" type="Node3D"]
@@ -32,3 +33,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.746965, 1.10085, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m8k14")
+
+[node name="godot_plush_sitting" parent="." instance=ExtResource("5_frmcm")]
+transform = Transform3D(-2.04716, 0, 2.1708, 0, 2.98383, 0, -2.1708, 0, -2.04716, 1.86997, 0.96183, -1.92175)
