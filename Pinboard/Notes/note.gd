@@ -15,6 +15,8 @@ var offset_from_mouse: Vector2 = Vector2.ZERO
 static var cursor_state = CURSOR_DEFAULT
 static var curr_connection: Control
 
+@onready var button_panel: Control = $ButtonPanel
+
 
 func _process(delta: float) -> void:
 	if is_picked:
@@ -100,13 +102,13 @@ func show_buttons() -> void:
 		return
 	
 	#$AnimationPlayer.play("show_connection_buttons")
-	$ButtonPanel.visible = true
+	button_panel.visible = true
 	var t: Tween = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT)
 	t.set_parallel()
-	t.tween_property($ButtonPanel, "position:y", -size.y, 0.5)
+	t.tween_property(button_panel, "position:y", -size.y / 5, 0.5)
 
 
 func hide_buttons() -> void:
 	var t: Tween = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT)
 	t.set_parallel()
-	t.tween_property($ButtonPanel, "position:y", 0, 0.5)
+	t.tween_property(button_panel, "position:y", 30, 0.5)
