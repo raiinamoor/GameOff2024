@@ -61,6 +61,9 @@ overrides = {}
 script = ExtResource("1_kpasf")
 scene = ExtResource("7_31ecw")
 overrides = {
+"text_color_disabled": "Color(1, 1, 1, 1)",
+"text_color_hovered": "Color(1, 1, 1, 1)",
+"text_color_pressed": "Color(0.90625, 0.90625, 0.90625, 1)",
 "text_color_use_global": "false"
 }
 
