@@ -43,27 +43,6 @@ func transition(fade_in: bool, duration: float):
 	await t.finished
 "
 
-[sub_resource type="GDScript" id="GDScript_8gsmx"]
-script/source = "extends Control
-
-
-func _unhandled_key_input(event: InputEvent) -> void:
-	if event.is_action(\"pause\"):
-		pause()
-
-
-func pause():
-	visible = true
-	Engine.time_scale = 0
-
-
-func unpause():
-	visible = false
-	Engine.time_scale = 1
-"
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_4y2wq"]
-
 [sub_resource type="GDScript" id="GDScript_l5o3n"]
 script/source = "extends Control
 
@@ -71,11 +50,6 @@ script/source = "extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Dialogic.signal_event.connect(display_note)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func display_note(arg_str: String):
@@ -98,6 +72,40 @@ func display_note(arg_str: String):
 		note.queue_free()
 "
 
+[sub_resource type="GDScript" id="GDScript_8gsmx"]
+script/source = "extends Control
+
+
+var is_enabled: bool = false
+
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"pause\"):
+		if not visible and is_enabled:
+			pause()
+		elif is_enabled:
+			unpause()
+
+
+func pause():
+	var base_style = %Screen.get_node_or_null(\"DialogicLayout_BaseDialogueStyle\")
+	if not base_style == null: 
+		base_style.visible = false
+	visible = true
+	Engine.time_scale = 0
+
+
+func unpause():
+	var base_style = %Screen.get_node_or_null(\"DialogicLayout_BaseDialogueStyle\")
+	if not base_style == null: 
+		base_style.visible = true
+	visible = false
+	Engine.time_scale = 1
+
+
+func return_to_main_menu():
+	is_enabled = false
+"
 [node name="Main" type="Node3D"]
 script = ExtResource("1_jjht5")
 
