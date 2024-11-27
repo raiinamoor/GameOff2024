@@ -3,6 +3,8 @@
 [resource]
 resource_name = "Silver"
 cull_mode = 2
+diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(0.301711, 0.292173, 0.3232, 1)
 metallic_specular = 0.0
-roughness = 0.01
+roughness = 0.0

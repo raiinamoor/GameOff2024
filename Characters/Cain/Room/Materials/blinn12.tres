@@ -6,7 +6,8 @@
 resource_name = "blinn12"
 cull_mode = 2
 diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(0.501407, 0.501406, 0.501406, 1)
 albedo_texture = ExtResource("1_6fkqu")
 metallic_specular = 0.0
-roughness = 0.0104153
+roughness = 0.0
