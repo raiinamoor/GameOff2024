@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bylat1lrxiqke"]
+
+[resource]
+resource_name = "Red"
+diffuse_mode = 3
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.730063, 0.501284, 0.385602, 1)
+metallic_specular = 0.0
+roughness = 0.0

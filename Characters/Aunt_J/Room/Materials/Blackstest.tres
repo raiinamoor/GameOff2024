@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://crilu60ibne3t"]
+
+[resource]
+resource_name = "Blackstest"
+diffuse_mode = 3
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.202367, 0.186265, 0.234258, 1)
+metallic_specular = 0.0
+roughness = 0.0

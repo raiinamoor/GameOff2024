@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dbh6glu2x0dcw"]
+
+[resource]
+resource_name = "redder_red"
+diffuse_mode = 3
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.665185, 0.369992, 0.369992, 1)
+metallic_specular = 0.0
+roughness = 0.0

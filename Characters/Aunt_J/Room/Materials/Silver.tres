@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b0w2k3ex3ceol"]
+
+[resource]
+resource_name = "Silver"
+diffuse_mode = 3
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.585347, 0.576833, 0.60397, 1)
+metallic_specular = 0.0
+roughness = 0.0
