@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b81row5db6q6b"]
+[gd_scene load_steps=8 format=3 uid="uid://b81row5db6q6b"]
 
 [ext_resource type="Script" path="res://Characters/Dialogue/Layers/CenteredChoices/vn_choice_layer.gd" id="1_kurgw"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Choice/node_choice_button.gd" id="1_w632k"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Choice/node_button_sound.gd" id="2_mgko6"]
+[ext_resource type="Theme" uid="uid://dgbn7lf6l0n80" path="res://UI/ui_theme.tres" id="2_on0nj"]
 [ext_resource type="AudioStream" uid="uid://b6c1p14bc20p1" path="res://addons/dialogic/Example Assets/sound-effects/typing1.wav" id="3_mql8i"]
 [ext_resource type="AudioStream" uid="uid://c2viukvbub6v6" path="res://addons/dialogic/Example Assets/sound-effects/typing4.wav" id="4_420fr"]
 
@@ -45,62 +46,96 @@ offset_right = -50.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 2
+theme_override_constants/separation = 50
 alignment = 1
 metadata/_edit_layout_mode = 1
 
 [node name="DialogicNode_ChoiceButton1" type="Button" parent="Choices"]
 layout_mode = 2
+theme = ExtResource("2_on0nj")
 text = "Some text"
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_w632k")
 
 [node name="DialogicNode_ChoiceButton2" type="Button" parent="Choices"]
 layout_mode = 2
+theme = ExtResource("2_on0nj")
 text = "Some text"
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_w632k")
 
 [node name="DialogicNode_ChoiceButton3" type="Button" parent="Choices"]
 layout_mode = 2
+theme = ExtResource("2_on0nj")
 text = "Some text"
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_w632k")
 
 [node name="DialogicNode_ChoiceButton4" type="Button" parent="Choices"]
 layout_mode = 2
+theme = ExtResource("2_on0nj")
 text = "Some text"
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_w632k")
 
 [node name="DialogicNode_ChoiceButton5" type="Button" parent="Choices"]
 layout_mode = 2
+theme = ExtResource("2_on0nj")
 text = "Some text"
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_w632k")
 
 [node name="DialogicNode_ChoiceButton6" type="Button" parent="Choices"]
 layout_mode = 2
+theme = ExtResource("2_on0nj")
 text = "Some text"
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_w632k")
 
 [node name="DialogicNode_ChoiceButton7" type="Button" parent="Choices"]
 layout_mode = 2
+theme = ExtResource("2_on0nj")
 text = "Some text"
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_w632k")
 
 [node name="DialogicNode_ChoiceButton8" type="Button" parent="Choices"]
 layout_mode = 2
+theme = ExtResource("2_on0nj")
 text = "Some text"
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_w632k")
 
 [node name="DialogicNode_ChoiceButton9" type="Button" parent="Choices"]
 layout_mode = 2
+theme = ExtResource("2_on0nj")
 text = "Some text"
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_w632k")
 
 [node name="DialogicNode_ChoiceButton10" type="Button" parent="Choices"]
 layout_mode = 2
+theme = ExtResource("2_on0nj")
 text = "Some text"
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_w632k")
 
 [node name="DialogicNode_ChoiceButton11" type="Button" parent="Choices"]
 layout_mode = 2
+theme = ExtResource("2_on0nj")
 text = "Some text"
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_w632k")
 
 [node name="DialogicNode_ButtonSound" type="AudioStreamPlayer" parent="Choices"]
