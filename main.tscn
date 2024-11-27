@@ -15,9 +15,17 @@
 script/source = "extends Control
 
 
+@onready var intro_timeline = Dialogic.preload_timeline(\"res://Characters/intro_timeline.dtl\")
+
+
 func start_game():
-	await %TransitionRect.transition(true)
+	await %TransitionRect.transition(true, 3)
 	visible = false
+	Dialogic.start(intro_timeline)
+	%RoomManager.visible = true
+	Dialogic.timeline_ended.connect(%TransitionRect.transition.bind(false, 2))
+	await %TransitionRect.transition
+	$\"../PauseMenu\".is_enabled = true
 
 
 func quit_game():
