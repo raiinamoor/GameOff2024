@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5h4kju0x1ghv"]
+[gd_scene load_steps=40 format=3 uid="uid://c5h4kju0x1ghv"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_jjht5"]
 [ext_resource type="Script" path="res://room_manager.gd" id="2_rfi6o"]
@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://l3mjk0unc7ri" path="res://Characters/Cain/Room/cain_room.tscn" id="3_ok4oh"]
 [ext_resource type="PackedScene" uid="uid://basecxo85ojpp" path="res://Pinboard/board_layer.tscn" id="3_s2egt"]
 [ext_resource type="Script" path="res://Music/music_manager.gd" id="4_8ma02"]
-[ext_resource type="AudioStream" uid="uid://qj2xd8wcevmf" path="res://Music/A4.wav" id="5_5wwdd"]
 [ext_resource type="PackedScene" uid="uid://donhn7hrb2wu0" path="res://Characters/Aunt_J/Room/aunt_j_room.tscn" id="4_8nu54"]
 [ext_resource type="Texture2D" uid="uid://cly0v8g432gtm" path="res://UI/Screen change arrow.png" id="7_kqyts"]
 [ext_resource type="Texture2D" uid="uid://cquardifuqlem" path="res://UI/Pinboard icon.png" id="8_j3c7x"]
 [ext_resource type="Theme" uid="uid://dgbn7lf6l0n80" path="res://UI/ui_theme.tres" id="9_im0ob"]
+[ext_resource type="AudioStream" uid="uid://4bmbl186j7c2" path="res://Music/title_initial.wav" id="10_72nc6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sd3uo"]
 
@@ -163,6 +163,23 @@ func return_to_main_menu():
 "
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_4y2wq"]
+
+[sub_resource type="GDScript" id="GDScript_ywpn2"]
+script/source = "extends AudioStreamPlayer
+
+
+var initial = load(\"res://Music/title_initial.wav\")
+var loop: AudioStream = load(\"res://Music/title_loop.wav\")
+
+
+func _ready() -> void:
+	finished.connect(
+		func(): 
+			stream = loop
+			play(),
+		CONNECT_ONE_SHOT)
+"
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_jjht5")
 
@@ -381,11 +398,18 @@ text = "EXIT THE GAME"
 
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource("4_8ma02")
+starting_track = NodePath("TitleTheme")
 
-[node name="MainMenuLayer" type="AudioStreamPlayer" parent="MusicManager"]
-stream = ExtResource("5_5wwdd")
+[node name="TitleTheme" type="AudioStreamPlayer" parent="MusicManager"]
+stream = ExtResource("10_72nc6")
+autoplay = true
+bus = &"Music"
+script = SubResource("GDScript_ywpn2")
 
 [node name="HouseBaseLayer" type="AudioStreamPlayer" parent="MusicManager"]
+volume_db = -60.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="UILayer/Screen/MoveLeftButton" to="RoomManager" method="move_left"]
 [connection signal="pressed" from="UILayer/Screen/MoveRightButton" to="RoomManager" method="move_right"]
