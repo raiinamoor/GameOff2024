@@ -9,7 +9,10 @@ extends Area3D
 func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event.is_action_pressed("start_conversation"):
 		print("Conversation started")
-		Dialogic.start(timeline_name)
+		var dialogic_scn = Dialogic.start(timeline)
+		var screen = get_node("/root/Main/UILayer/Screen")
+		await dialogic_scn.child_entered_tree
+		dialogic_scn.reparent.call_deferred(screen)
 
 
 func _on_mouse_entered() -> void:
