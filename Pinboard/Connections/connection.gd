@@ -22,24 +22,10 @@ func _process(delta: float) -> void:
 		line_2d.points[-1] = get_local_mouse_position() * 0.99
 	else:
 		var end_position: Vector2 = end_node.global_position + end_node.get_rect().size / 2
-		# TODO make it so that the line connects to the edge of the note
-		#var position_on_edge: Vector2 = (end_position - root_node.global_position).clamp(-end_node.get_rect().size / 2, end_node.get_rect().size / 2)
-		#line_2d.points[-1] = to_local( end_position - position_on_edge )
-		#var diff = (end_position - root_node.global_position).rotated(deg_to_rad(-90)).normalized() * 15.0
 		line_2d.points[-1] = end_position - global_position #+ diff
 	
-	#position CollisionShape2D in the middle of the line and rotate it
-	#collider.position = lerp(line_2d.points[0], line_2d.points[1], 0.5)
-	#collider.shape.size.x = (line_2d.points[0] - line_2d.points[1]).length()
-	#collider.rotation = line_2d.points[0].angle_to_point(line_2d.points[1])
-	#button.position = line_2d.points[0]
 	button.size.x = (line_2d.points[0] - line_2d.points[1]).length()
 	button.rotation = line_2d.points[0].angle_to_point(line_2d.points[1])
-
-
-#func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
-	#if event.is_action_pressed("remove_connection"):
-		#remove_connection()
 
 
 func connect_to(target: Button) -> void:
