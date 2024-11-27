@@ -49,7 +49,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1920.0
+offset_left = -60.0
+offset_right = 1980.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -168,6 +169,7 @@ offset_left = 1346.0
 offset_top = 1053.0
 offset_right = 1623.0
 offset_bottom = 1133.0
+mouse_filter = 1
 text = "Cain said that he covered 
 something up a week ago."
 icon = ExtResource("5_e85k2")

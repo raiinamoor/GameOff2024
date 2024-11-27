@@ -29,15 +29,13 @@ func _ready() -> void:
 	$"../../UILayer/Screen/OpenPinboardButton".pressed.connect(toggle_board)
 
 
-func _gui_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event is InputEventMouse:
-		#print(event)
 		if event.is_action_pressed("zoom_in"):
 			zoom_in()
 		elif event.is_action_pressed("zoom_out"):
 			zoom_out()
 		
-		print(event)
 		if event.is_action_pressed("pan_around_the_board"):
 			prev_mouse_pos = get_global_mouse_position()
 		var diff = prev_mouse_pos - get_global_mouse_position()
@@ -69,6 +67,7 @@ func toggle_board():
 
 func show_board() -> void:
 	$"..".visible = true
+	camera_2d.zoom = Vector2(0.5, 0.5)
 	var t: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	t.tween_property(self, "position:y", 0, 1)
 	await t.finished
