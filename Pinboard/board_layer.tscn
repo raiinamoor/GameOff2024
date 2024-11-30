@@ -37,6 +37,74 @@ offset_bottom = -2160.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c2mbc")
+clusters = Array[Dictionary]([{
+NodePath("1"): {
+NodePath("2"): 1
+},
+NodePath("2"): {
+NodePath("1"): 1
+}
+}, {
+NodePath("4"): {
+NodePath("5"): 1,
+NodePath("8"): 1
+},
+NodePath("8"): {
+NodePath("3"): 1,
+NodePath("6"): 1,
+NodePath("7"): 1
+}
+}, {
+NodePath("9"): {
+NodePath("10"): 1,
+NodePath("11"): 1
+},
+NodePath("10"): {
+NodePath("11"): 2
+}
+}, {
+NodePath("12"): {
+NodePath("13"): 1,
+NodePath("14"): 1,
+NodePath("15"): 1
+},
+NodePath("13"): {
+NodePath("20"): 1,
+NodePath("21"): 1
+},
+NodePath("18"): {
+NodePath("15"): 1,
+NodePath("19"): 1
+},
+NodePath("14"): {
+NodePath("16"): 1,
+NodePath("17"): 1
+},
+NodePath("17"): {
+NodePath("16"): 2
+}
+}, {
+NodePath("26"): {
+NodePath("23"): 1,
+NodePath("27"): 1
+},
+NodePath("24"): {
+NodePath("23"): 1,
+NodePath("25"): 1,
+NodePath("28"): 1
+},
+NodePath("27"): {
+NodePath("28"): 2
+}
+}, {
+NodePath("29"): {
+NodePath("30"): 1
+}
+}])
+
+[node name="ClusterCompleteSound" type="AudioStreamPlayer" parent="PinBoard"]
+stream = ExtResource("2_n08fp")
+bus = &"SFX"
 
 [node name="BG" type="TextureRect" parent="PinBoard"]
 z_index = -5
