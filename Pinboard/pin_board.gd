@@ -132,6 +132,7 @@ func _on_connection_changed(n: Button) -> void:
 			print("Cluster {name} complete!".format({"name": cluster}))
 			cluster_flags[i] = true
 			on_cluster_complete.emit(i)
+			$ClusterCompleteSound.play()
 			
 			# doing stuff for each note in completed cluster
 			for note_path in cluster:
