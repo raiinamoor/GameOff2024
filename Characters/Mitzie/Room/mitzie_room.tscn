@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2cs55gwxv0gt"]
+[gd_scene load_steps=9 format=3 uid="uid://c2cs55gwxv0gt"]
 
 [ext_resource type="Script" path="res://Characters/room_logic.gd" id="1_iwooj"]
 [ext_resource type="Script" path="res://Player/camera_rotation.gd" id="1_tk2wn"]
@@ -10,6 +10,17 @@
 background_color = Color(0.624055, 0.431919, 0.316754, 1)
 background_energy_multiplier = 8.0
 adjustment_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o82ff"]
+diffuse_mode = 3
+albedo_color = Color(0, 0.518336, 0.976492, 1)
+metallic_specular = 0.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.446681, 0.751741, 1, 1)
+emission_energy_multiplier = 1.25
+
+[sub_resource type="QuadMesh" id="QuadMesh_mhfuo"]
 
 [node name="MitzieRoom" type="Node3D"]
 script = ExtResource("1_iwooj")
@@ -36,3 +47,8 @@ environment = SubResource("Environment_m8k14")
 
 [node name="godot_plush_sitting" parent="." instance=ExtResource("5_frmcm")]
 transform = Transform3D(-2.04716, 0, 2.1708, 0, 2.98383, 0, -2.1708, 0, -2.04716, 1.86997, 0.96183, -1.92175)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.41427, 0, 0, 0, 5.41427, 0, 0, 0, 5.41427, -0.148125, 2.16444, -4.68044)
+material_override = SubResource("StandardMaterial3D_o82ff")
+mesh = SubResource("QuadMesh_mhfuo")

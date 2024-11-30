@@ -3,5 +3,8 @@
 [resource]
 resource_name = "Lighter_blue1"
 cull_mode = 2
+diffuse_mode = 3
+specular_mode = 2
 albedo_color = Color(0, 0.50659, 0.6272, 1)
-roughness = 0.0764706
+metallic_specular = 0.0
+roughness = 0.0

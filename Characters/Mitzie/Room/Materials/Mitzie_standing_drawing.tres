@@ -5,6 +5,8 @@
 [resource]
 resource_name = "Mitzie_standing_drawing"
 cull_mode = 2
+diffuse_mode = 3
+specular_mode = 2
 albedo_texture = ExtResource("1_l1bi7")
 metallic_specular = 0.0
-roughness = 0.0104153
+roughness = 0.0

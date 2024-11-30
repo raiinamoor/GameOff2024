@@ -33,6 +33,18 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
+"Beige": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Beige.tres"
+},
+"Beige1": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Beige1.tres"
+},
+"Black": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Black.tres"
+},
 "Blue": {
 "use_external/enabled": true,
 "use_external/path": "res://Characters/Mitzie/Room/Materials/Blue.tres"
@@ -40,6 +52,10 @@ _subresources={
 "Dark_brown": {
 "use_external/enabled": true,
 "use_external/path": "res://Characters/Mitzie/Room/Materials/Dark_brown.tres"
+},
+"Dark_brown1": {
+"use_external/enabled": true,
+"use_external/path": "res://Characters/Mitzie/Room/Materials/Dark_brown1.tres"
 },
 "Darker_beige": {
 "use_external/enabled": true,
