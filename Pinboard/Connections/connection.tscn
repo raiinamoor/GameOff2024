@@ -1,14 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://7pnoxb7pntba"]
+[gd_scene load_steps=3 format=3 uid="uid://7pnoxb7pntba"]
 
 [ext_resource type="Script" path="res://Pinboard/Connections/connection.gd" id="1_fdr2v"]
+[ext_resource type="Texture2D" uid="uid://50e6t3tu8lux" path="res://UI/String sprite.png" id="2_e58oq"]
 
 [node name="Connection" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 1
 script = ExtResource("1_fdr2v")
 
 [node name="Line2D" type="Line2D" parent="."]
 z_index = -1
+texture_repeat = 2
+width = 24.0
+texture = ExtResource("2_e58oq")
+texture_mode = 1
 antialiased = true
 
 [node name="Button" type="Button" parent="."]

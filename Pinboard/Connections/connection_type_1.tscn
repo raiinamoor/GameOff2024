@@ -1,15 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtifhrtg5btvk"]
+[gd_scene load_steps=2 format=3 uid="uid://dtifhrtg5btvk"]
 
 [ext_resource type="PackedScene" uid="uid://7pnoxb7pntba" path="res://Pinboard/Connections/connection.tscn" id="1_lvjp1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v48ny"]
-resource_local_to_scene = true
 
 [node name="ConnectionType1" instance=ExtResource("1_lvjp1")]
 connection_type = 1
 
 [node name="Line2D" parent="." index="0"]
-default_color = Color(1, 0, 0, 1)
-
-[node name="Collider" parent="." index="1"]
-shape = SubResource("RectangleShape2D_v48ny")
+default_color = Color(0.634522, 0.853164, 0.337861, 1)
