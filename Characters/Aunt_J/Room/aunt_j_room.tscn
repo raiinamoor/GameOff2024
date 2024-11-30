@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://donhn7hrb2wu0"]
+[gd_scene load_steps=8 format=3 uid="uid://donhn7hrb2wu0"]
 
 [ext_resource type="Script" path="res://Player/camera_rotation.gd" id="1_5genm"]
 [ext_resource type="Script" path="res://Characters/room_logic.gd" id="1_i2m5i"]
@@ -11,6 +11,17 @@ background_color = Color(0.32793, 0.297235, 0.27241, 1)
 background_energy_multiplier = 8.0
 ambient_light_color = Color(0.674304, 0.809386, 0.865635, 1)
 ambient_light_sky_contribution = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0irc"]
+diffuse_mode = 3
+albedo_color = Color(0, 0.518336, 0.976492, 1)
+metallic_specular = 0.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.446681, 0.751741, 1, 1)
+emission_energy_multiplier = 1.25
+
+[sub_resource type="QuadMesh" id="QuadMesh_agrqy"]
 
 [node name="AuntJRoom" type="Node3D"]
 script = ExtResource("1_i2m5i")
@@ -34,3 +45,8 @@ environment = SubResource("Environment_1p3t5")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.507479, 0.520698, -0.686542, 2.20686e-08, 0.796762, 0.604293, 0.861664, 0.306666, -0.404339, 0, 9.24825, 0)
 sky_mode = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.41427, 0, 0, 0, 5.41427, 0, 0, 0, 5.41427, -2.92769, 2.06494, -4.68044)
+material_override = SubResource("StandardMaterial3D_p0irc")
+mesh = SubResource("QuadMesh_agrqy")
