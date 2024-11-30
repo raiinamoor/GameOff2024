@@ -81,7 +81,6 @@ func display_as_completed() -> void:
 	var t: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
 	t.tween_property(self, "position", initial_position, 1)
 	$Checkmark.visible = true
-	button_panel
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	mouse_default_cursor_shape = CursorShape.CURSOR_ARROW
 
