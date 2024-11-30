@@ -22,6 +22,10 @@ var aunt_j_unlocked: bool = true
 		available_rooms[curr_room_idx].visible = false
 		available_rooms[value].visible = true
 		await %TransitionRect.transition(false, 0.5)
+		$"../MusicManager".curr_layer = $"../MusicManager/HouseMitzieLayer" if value == 0 \
+				else $"../MusicManager/HouseCainLayer" if value == 1 \
+				else $"../MusicManager/HouseAuntJLayer" if value == 2 \
+				else $"../MusicManager/PinboardLayer"
 		curr_room_idx = value
 
 
