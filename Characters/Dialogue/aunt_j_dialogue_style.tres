@@ -26,7 +26,7 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_qd8kq"]
 script = ExtResource("2_wgq8w")
 overrides = {
-"typing_sounds_pitch": "1.12",
+"typing_sounds_pitch": "1.2",
 "typing_sounds_sounds_folder": "\"res://Characters/Aunt_J/Voice\""
 }
 
@@ -64,4 +64,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("2_wgq8w")]([])
-metadata/_latest_layer = ""
+metadata/_latest_layer = "13"
