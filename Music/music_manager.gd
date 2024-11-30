@@ -4,9 +4,10 @@ extends Node
 @export var starting_track: NodePath
 @export var transition_duration: float = 1.5
 var min_volume = ProjectSettings.get_setting("audio/buses/channel_disable_threshold_db")
-
+var prev_layer: AudioStreamPlayer
 @onready var curr_layer: AudioStreamPlayer = $TitleTheme:
 	set(value):
+		prev_layer = curr_layer
 		transition(curr_layer, value)
 		curr_layer = value
 
@@ -18,17 +19,16 @@ func start():
 	$HouseMitzieLayer.play()
 	$HouseCainLayer.play()
 	$HouseAuntJLayer.play()
+	$PinboardLayer.play()
 	curr_layer = $HouseMitzieLayer
 
 
-#func _ready() -> void:
-	#play()
-#
-#
-#func play(what: AudioStreamPlayer):
-	#for child in get_children():
-		#child.volume_db = -60
-	#what.volume_db = 0
+func play_pinboard_music(play: bool):
+	if play:
+		curr_layer = $PinboardLayer
+	else:
+		print(curr_layer.name, prev_layer.name)
+		curr_layer = prev_layer
 
 
 func fade(what: AudioStreamPlayer, fade_in = true):
