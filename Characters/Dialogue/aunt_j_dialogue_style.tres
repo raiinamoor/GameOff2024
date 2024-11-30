@@ -7,7 +7,7 @@
 [sub_resource type="Resource" id="Resource_6omea"]
 script = ExtResource("2_wgq8w")
 overrides = {
-"global_bg_color": "Color(0.223175, 0.554688, 0.321593, 0.9)",
+"global_bg_color": "Color(0.223529, 0.552941, 0.321569, 0.941176)",
 "global_font_color": "Color(0.0709534, 0.0787258, 0.195313, 1)"
 }
 

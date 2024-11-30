@@ -14,8 +14,9 @@
 [sub_resource type="Resource" id="Resource_p3ctd"]
 script = ExtResource("1_kpasf")
 overrides = {
-"global_bg_color": "Color(1, 1, 1, 0.9)",
+"global_bg_color": "Color(0.905882, 0.780392, 0.980392, 0.941176)",
 "global_font": "\"res://Fonts/MORE-SUGAR.THIN.TTF\"",
+"global_font_color": "Color(0.129737, 0.108215, 0.140625, 1)",
 "global_font_size": "32.0"
 }
 
@@ -94,4 +95,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_kpasf")]([])
-metadata/_latest_layer = "15"
+metadata/_latest_layer = ""

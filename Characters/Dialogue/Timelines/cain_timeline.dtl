@@ -1,5 +1,5 @@
 if {cain_met} == false:
-	cain_dialogic: Hey kid, what do you want? [signal=test]
+	cain_dialogic: Hey kid, what do you want?
 	- Is there drama going on? | [if {asked_cain_about_drama} == false]
 		cain_dialogic: Drama? Who's asking?
 		- Mitzie
@@ -33,7 +33,7 @@ if {cain_met} == false:
 			set {asked_cain_about_drama} = true
 			set {cain_met} = true
 			[end_timeline]
-cain_dialogic: What is is now?
+cain_dialogic: What is it now?
 - When was the last time you tried covering something up? | [if {clusters.B_seen} == true and {notes.11_get} == false]
 	cain_dialogic: Covering something up? Like lying?
 	- Yep!
@@ -46,8 +46,8 @@ cain_dialogic: What is is now?
 	set {notes.11_get} = true
 	[signal arg="11_get"]
 	cain_dialogic: ...Uh, anyways, [b]I'd say, like, a week ago? I covered up about something small[/b], but a friend caught me.
-- What's your favourite meal? | [if {notes.12_get} == true and {notes.15_get} == false]
-	cain_dialogic: Uh, it's this artichoke chicken dish. 
+- What's your favourite meal? | [if {notes.12_get} == true and {notes.15_get} == false and {clusters.C_seen} == true]
+	cain_dialogic: Uh, it's this artichoke chicken dish.
 	set {notes.13_get} = true
 	[signal arg="13_get"]
 	cain_dialogic: J is the only one who can make it. I've tried, but [b]I'm not a good cook[/b].
@@ -61,7 +61,7 @@ cain_dialogic: What is is now?
 	set {notes.15_get} = true
 	[signal arg="15_get"]
 	cain_dialogic: Uh, anyways, can you leave me alone? [b]I don't know how much I wanna talk about that night...[/b]
-- I have dog food! | [if {clusters.D_seen} == true and {gave_cain_dog_food} == false]
+- I have dog food! | [if {notes.22_get} == true and {gave_cain_dog_food} == false]
 	cain_dialogic: Dog food?
 	- Dog food!
 	label dog food
@@ -75,9 +75,7 @@ cain_dialogic: What is is now?
 		- Well-
 		cain_dialogic: WHAT DID SHE SAY
 		- What you just said.
-		set {notes.25_get} = true
-		[signal arg="25_get"]
-		cain_dialogic: [b]Ffffffffffffffffudge. I messed up.[/b] Please don't tell J.
+		cain_dialogic: Ffffffffffffffffudge. I messed up. Please don't tell J.
 		- I won't. Unless...
 		cain_dialogic: oh no blackmail
 		- Tell me about the box you lost.
@@ -97,6 +95,57 @@ cain_dialogic: What is is now?
 		- Take care!
 		cain_dialogic: You too.
 		set {gave_cain_dog_food} = true
+- Did you already finish? | [if {told_mitzie_of_keepsake} == true and {notes.26_get} == false]
+	cain_dialogic: Huh? 
+	cain_dialogic: Oh, well I tried eating it, but I guess I'm not hungry right now.
+	- Can I ask you a question?
+	cain_dialogic: It's related to the lockbox, isn't it?
+	- Yep!
+	cain_dialogic: I'm guessing you want to know how I... lost it.
+	[signal arg="26_get"]
+	set {notes.26_get} = true
+	cain_dialogic: Well, after I left college, I had to scramble packing all my things. [b]Must've left it in my dorm.[/b]
+	- Why did you leave?
+	cain_dialogic: It was too much. Got overwhelmed. 
+	cain_dialogic: J wanted me to go off right after high school, I wanted to take a year or two to myself.
+	[signal arg="27_get"]
+	set {notes.27_get} = true
+	cain_dialogic: I ended up getting [b]kicked out due to bad grades[/b].
+	[end_timeline]
+- Did you get kicked out or did you drop out? | [if {notes.29_get} == true and {notes.30_get} == false]
+	cain_dialogic: I.. oh...
+	cain_dialogic: W-well, I told J that I dropped out. I... couldn't let her down, you know?
+	- Let her down?
+	cain_dialogic: Yeah. I don't want to make her more upset.
+	- Lying will make it worse!
+	cain_dialogic: Y-yeah, I know. I plan on telling her, but...
+	- Did you lie again?
+	cain_dialogic: Huh?
+	- About the lockbox.
+	cain_dialogic: . . .
+	cain_dialogic: Yes.
+	[signal arg="30_get"]
+	set {notes.30_get} = true
+	cain_dialogic: [b]I... still have it.[/b]
+	- WHAT!
+	cain_dialogic: Can I tell you something? It.. might be a lot.
+	- Okay?
+	cain_dialogic: When I got the lockbox, I was told that it was special because it had something secret inside.
+	cain_dialogic: Something only people who have it know what it is.
+	cain_dialogic: I didn’t think much of it, but when I got to college, some… friends of mine told me to open it. 
+	cain_dialogic: So I did some lockpicking and opened the box, but…
+	cain_dialogic: It was empty.
+	cain_dialogic: I didn’t really think of it, but once I got back home, I realized that this really important thing was always gone.
+	cain_dialogic: When J asked me about it during dinner two nights ago, I began to panic.
+	cain_dialogic: I didn’t know what to do, I didn’t know what to say. So I lied and said I lost it.
+	cain_dialogic: Telling the truth has always been hard for me. It seems like, when I do, something goes wrong. 
+	cain_dialogic: Lying is usually the best way to get the best outcome, like how I lied about why I left college.
+	cain_dialogic: But this time, with the lockbox, I did it on instinct.
+	- Why are you telling me this?
+	cain_dialogic: Because I need to tell someone, I suppose. 
+	cain_dialogic: I think I’m done lying, keeping all these secrets.
+	cain_dialogic: Thanks... for being nosey, cuz.
+	[end_timeline]
 - Uh, nothing...
 	cain_dialogic: Then buzz off!!
 	[end_timeline]

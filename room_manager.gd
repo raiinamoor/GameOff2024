@@ -30,7 +30,7 @@ var aunt_j_unlocked: bool = true
 
 
 func _ready() -> void:
-	pass
+	Dialogic.signal_event.connect(unlock_room)
 
 
 func move_right():
