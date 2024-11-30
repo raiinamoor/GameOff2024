@@ -1,14 +1,20 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dgbn7lf6l0n80"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dgbn7lf6l0n80"]
 
 [ext_resource type="FontFile" uid="uid://dv3ixxtjdhthb" path="res://Fonts/MORE-SUGAR.THIN.TTF" id="1_4n7fd"]
 [ext_resource type="Texture2D" uid="uid://dtp8pkuihhwyu" path="res://UI/Main menu.png" id="1_owid0"]
+[ext_resource type="Texture2D" uid="uid://bbb7w04be0dpu" path="res://UI/Continue.png" id="2_ai5k8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7q3n"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0uwwt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8t8r4"]
-texture = ExtResource("1_owid0")
+texture = ExtResource("2_ai5k8")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+modulate_color = Color(0.905882, 0.780392, 0.980392, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5wful"]
 texture = ExtResource("1_owid0")
@@ -16,6 +22,7 @@ expand_margin_left = 20.0
 expand_margin_top = 20.0
 expand_margin_right = 20.0
 expand_margin_bottom = 20.0
+modulate_color = Color(0.906496, 0.779387, 0.979377, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tgqdy"]
 texture = ExtResource("1_owid0")
@@ -23,6 +30,7 @@ expand_margin_left = 15.0
 expand_margin_top = 15.0
 expand_margin_right = 15.0
 expand_margin_bottom = 15.0
+modulate_color = Color(0.905882, 0.780392, 0.980392, 1)
 
 [resource]
 Button/colors/font_color = Color(0.0999863, 0.0999859, 0.099986, 1)
@@ -36,13 +44,13 @@ Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
 Button/colors/icon_focus_color = Color(1, 1, 1, 1)
 Button/colors/icon_hover_color = Color(1, 1, 1, 1)
 Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
-Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(0.747058, 0.624047, 0.788758, 1)
 Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
 Button/constants/align_to_largest_stylebox = 0
 Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
-Button/font_sizes/font_size = 16
+Button/font_sizes/font_size = 28
 Button/fonts/font = ExtResource("1_4n7fd")
 Button/styles/disabled = SubResource("StyleBoxEmpty_x7q3n")
 Button/styles/focus = SubResource("StyleBoxEmpty_0uwwt")
