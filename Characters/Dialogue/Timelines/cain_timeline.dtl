@@ -26,9 +26,9 @@ if {cain_met} == false:
 			- So there IS drama!
 			cain_dialogic: Never said that.
 			- Didn't have to.
-			cain_dialogic: I- ugh, fine. [b]There's something going on[/b].
 			set {notes.4_get} = true
 			[signal arg="4_get"]
+			cain_dialogic: I- ugh, fine. [b]There's something going on[/b].
 			cain_dialogic: But that's all I wanna say, okay? Now buzz off.
 			set {asked_cain_about_drama} = true
 			set {cain_met} = true

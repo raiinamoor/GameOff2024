@@ -1,8 +1,15 @@
 if {mitzie_met} == false:
 	mitzie_dialogic: Cuz!! It's so nice of you to visit!
 	- Hi!!!
-	mitzie_dialogic: You know...
-	mitzie_dialogic: I think there's something going on between Cain and mom.
+	mitzie_dialogic: So... whaddya wanna do?
+	- I wanna play detective!
+	mitzie_dialogic: Oh, that sounds fun! [b]Well, my pinboard is open as usual![/b]
+	set {pinboard_unlocked} = true
+	[signal arg="pinboard_unlock"]
+	
+	mitzie_dialogic: But what to investigate...
+	mitzie_dialogic: Oh, I got it!
+	mitzie_dialogic: You know... I think there's something going on between Cain and mom.
 	mitzie_dialogic: Cain's been acting really strange, and J won't talk to me about it.
 	mitzie_dialogic: I don't know...
 	label first_fork
@@ -22,10 +29,8 @@ if {mitzie_met} == false:
 	set {mitzie_met} = true
 label beginning
 mitzie_dialogic: So whaddaya wanna talk about?
-- Hey, can I use your pinboard? I need to figure something out. | [if {pinboard_unlocked} == false]
-	mitzie_dialogic: Oh, sure! Feel free to use it whenever!
-	[signal arg="pinboard_unlock"]
-	set {pinboard_unlocked} = true
+- Hm.. I need to figure something out. | [if {pinboard_unlocked} == false]
+	mitzie_dialogic: Oh, sure! Feel free to use my pinboard whenever!
 - Maybe there's some sort of drama going on? | [if {clusters.cluster_1_complete} == true and {clusters.A_seen} == false]
 	mitzie_dialogic: Oh, you might be on to something! Maybe there is some drama between them.
 	mitzie_dialogic: I think it might be a good idea to ask Cain!
@@ -73,7 +78,7 @@ mitzie_dialogic: So whaddaya wanna talk about?
 	- Aunt J said 2 days ago.
 		mitzie_dialogic: Oh, and I'm guessing Cain said something else, huh?
 		- Do you remember anything?
-		mitzie_dialogic: Well, sadly... no. 
+		mitzie_dialogic: Well, sadly... no.
 		mitzie_dialogic: But! I remembered something else!
 	- Cain said a week ago.
 		mitzie_dialogic: Oh, and I'm guessing mom said something else, huh?
@@ -88,9 +93,9 @@ mitzie_dialogic: So whaddaya wanna talk about?
 	[end_timeline]
 - What do you know about Cain's cooking? | [if {notes.15_get} == true and {notes.21_get} == false]
 	mitzie_dialogic: Oh, his cooking SUCKS!!!!
-	mitzie_dialogic: This one time, he tried to make us chicken and artichoke. 
+	mitzie_dialogic: This one time, he tried to make us chicken and artichoke.
 	mitzie_dialogic: He bought beef instead of chicken.
-	mitzie_dialogic: I remember mom talking to him about it "How do you get them wrong?", stuff like that. 
+	mitzie_dialogic: I remember mom talking to him about it "How do you get them wrong?", stuff like that.
 	mitzie_dialogic: It's not like mom tells him what the recipe is, though.
 	set {notes.20_get} = true
 	[signal arg="20_get"]
@@ -143,13 +148,13 @@ mitzie_dialogic: So whaddaya wanna talk about?
 	mitzie_dialogic: Dog food!
 	set {notes.22_get} = true
 	[signal arg="22_get"]
-	mitzie_dialogic: Let me tell you a secret: [b]Cain actually loves this stuff.[/b]
+	mitzie_dialogic: Let me tell you a secret\: [b]Cain actually loves this stuff.[/b]
 	mitzie_dialogic: Dog food smells so good, especially flavored food. One time Cain tried a bite and now it's a guilty pleasure of his.
 	- That's gross!
-		mitzie_dialogic: It isn't, actually. Sometimes, dog food is quite tasty. 
+		mitzie_dialogic: It isn't, actually. Sometimes, dog food is quite tasty.
 		mitzie_dialogic: D-don't ask how I know, though.
 	- That's funny!
-		mitzie_dialogic: I know, right? 
+		mitzie_dialogic: I know, right?
 		mitzie_dialogic: But.. don't tell mom. She'll go wondering why she needs to buy so much dog food.
 	mitzie_dialogic: Anyhow, you should go give Cain the dog food. Maybe you'll learn something!
 	set {clusters.D_seen} = true
