@@ -73,6 +73,8 @@ func toggle_board():
 
 func show_board() -> void:
 	$"..".visible = true
+	$"../../UILayer/Screen/MoveLeftButton".visible = false
+	$"../../UILayer/Screen/MoveRightButton".visible = false
 	camera_2d.zoom = Vector2(0.5, 0.5)
 	var t: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	t.tween_property(self, "position:y", 0, 1)
@@ -82,7 +84,8 @@ func show_board() -> void:
 
 
 func hide_board():
-	#camera.zoom = Vector2(1, 1)
+	$"../../UILayer/Screen/MoveLeftButton".visible = true
+	$"../../UILayer/Screen/MoveRightButton".visible = true
 	var t: Tween = create_tween()
 	t.tween_property(camera_2d, "zoom", Vector2(0.5, 0.5), 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
 	t.tween_property(self, "position:y", -$BG.size.y, 1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
