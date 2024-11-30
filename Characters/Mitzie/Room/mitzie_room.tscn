@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2cs55gwxv0gt"]
+[gd_scene load_steps=13 format=3 uid="uid://c2cs55gwxv0gt"]
 
 [ext_resource type="Script" path="res://Characters/room_logic.gd" id="1_iwooj"]
 [ext_resource type="Script" path="res://Player/camera_rotation.gd" id="1_tk2wn"]
@@ -21,6 +21,53 @@ emission = Color(0.446681, 0.751741, 1, 1)
 emission_energy_multiplier = 1.25
 
 [sub_resource type="QuadMesh" id="QuadMesh_mhfuo"]
+
+[sub_resource type="GDScript" id="GDScript_wpfii"]
+script/source = "extends Area3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	Dialogic.signal_event.connect(highlight_board)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func highlight_board(arg: String):
+	if arg == \"pinboard_unlock\":
+		visible = true
+		var t: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
+		t.tween_property($MeshInstance3D, \"material_override:albedo_color:a\", 0.5, 0.8)
+		t.set_ease(Tween.EASE_IN)
+		t.tween_property($MeshInstance3D, \"material_override:albedo_color:a\", 0, 0.8)
+		Dialogic.signal_event.disconnect(highlight_board)
+
+
+func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	if event.is_action_pressed(\"start_conversation\"):
+		$\"../../../BoardLayer/PinBoard\".show_board()
+
+
+func _on_mouse_entered() -> void:
+	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+
+
+func _on_mouse_exited() -> void:
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_geihd"]
+size = Vector3(0.146484, 2.18015, 3.04753)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gegjh"]
+transparency = 1
+albedo_color = Color(1, 0, 0.0166664, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lhp61"]
+size = Vector3(0.146, 2.18, 3.048)
 
 [node name="MitzieRoom" type="Node3D"]
 script = ExtResource("1_iwooj")
@@ -52,3 +99,20 @@ transform = Transform3D(-2.04716, 0, 2.1708, 0, 2.98383, 0, -2.1708, 0, -2.04716
 transform = Transform3D(5.41427, 0, 0, 0, 5.41427, 0, 0, 0, 5.41427, -0.148125, 2.16444, -4.68044)
 material_override = SubResource("StandardMaterial3D_o82ff")
 mesh = SubResource("QuadMesh_mhfuo")
+
+[node name="PinboardCollider" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66746, 2.63326, -1.49616)
+visible = false
+script = SubResource("GDScript_wpfii")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PinboardCollider"]
+transform = Transform3D(1, 0, 0, 0, 0.994438, -0.105327, 0, 0.105327, 0.994438, 0, 0, 0)
+shape = SubResource("BoxShape3D_geihd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PinboardCollider"]
+transform = Transform3D(1, 0, 0, 0, 0.994142, -0.108086, 0, 0.108086, 0.994142, 0, -0.104658, 0)
+material_override = SubResource("StandardMaterial3D_gegjh")
+mesh = SubResource("BoxMesh_lhp61")
+
+[connection signal="mouse_entered" from="PinboardCollider" to="PinboardCollider" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PinboardCollider" to="PinboardCollider" method="_on_mouse_exited"]
