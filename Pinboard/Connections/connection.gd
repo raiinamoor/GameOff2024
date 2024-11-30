@@ -34,6 +34,7 @@ func connect_to(target: Button) -> void:
 	target.connections[root_node] = self
 	button.disabled = false
 	connection_removed.connect(root_node.remove_connection_from_list)
+	connection_removed.connect(end_node.remove_connection_from_list)
 	print("Connections from {name}: {cons}".format({"name": root_node.name, "cons": root_node.connections}))
 
 

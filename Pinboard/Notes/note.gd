@@ -73,7 +73,7 @@ func cancel_connection() -> void:
 
 
 func remove_connection_from_list(connection: Connection) -> void:
-	while not connection in connections.values():
+	while connection in connections.values():
 		connections.erase(connections.find_key(connection))
 
 
