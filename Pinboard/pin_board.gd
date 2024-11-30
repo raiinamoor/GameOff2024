@@ -5,6 +5,8 @@ const FARTHEST = Vector2(0.5, 0.5)
 const MEDIUM = Vector2(0.75, 0.75)
 const CLOSEST = Vector2(1, 1)
 
+signal on_cluster_complete(number: int)
+
 @export var clusters: Array[Dictionary]
 var queued_notes: Array[Button] = []
 var prev_mouse_pos: Vector2 = Vector2(0, 0)
@@ -26,6 +28,10 @@ func _ready() -> void:
 		note.connection_changed.connect(_on_connection_changed)
 	
 	Dialogic.signal_event.connect(queue_note)
+	on_cluster_complete.connect(func(number: int): 
+		Dialogic.VAR.clusters["cluster_{i}_complete".format({"i": number + 1})] = true
+		Dialogic.start("clusters_timeline")
+	)
 	$"../../UILayer/Screen/OpenPinboardButton".pressed.connect(toggle_board)
 
 
@@ -101,7 +107,7 @@ func _on_connection_changed(n: Button) -> void:
 	for i in clusters.size():
 		var connections_to_lock: Array[Connection] = []
 		if cluster_flags[i]:
-			return
+			continue
 		# checking clusters for completion
 		var cluster = clusters[i]
 		var cluster_complete: bool = true
@@ -111,7 +117,9 @@ func _on_connection_changed(n: Button) -> void:
 			for end_node_path in end_node_dicts:
 				var end_node: Button = get_node(end_node_path)
 				var connection_type: int = end_node_dicts[end_node_path]
-				if not (root_node.connections.has(end_node) and root_node.connections.get(end_node, null).connection_type == connection_type):
+				
+				if not (root_node.connections.has(end_node) \
+						and root_node.connections.get(end_node, null).connection_type == connection_type):
 					cluster_complete = false
 				else:
 					connections_to_lock.append(root_node.connections.get(end_node, null))
@@ -120,12 +128,12 @@ func _on_connection_changed(n: Button) -> void:
 			# marking the cluster as complete
 			print("Cluster {name} complete!".format({"name": cluster}))
 			cluster_flags[i] = true
+			on_cluster_complete.emit(i)
 			
 			# doing stuff for each note in completed cluster
 			for note_path in cluster:
 				# TODO move a note to a pre-defined place on the board when it is complete?
 				var note: Button = get_node(note_path)
-				if not clusters.any(func(c: Dictionary): return c.has(note.get_path())):
-					note.display_as_completed()
+				note.display_as_completed()
 			for connection: Connection in connections_to_lock:
 				connection.lock()

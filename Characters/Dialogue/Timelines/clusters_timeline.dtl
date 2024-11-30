@@ -1,0 +1,21 @@
+if {clusters.cluster_1_complete} == true and {clusters.cluster_2_complete} == false:
+	Hm... 
+	Maybe there's some drama happening between Cain and Aunt J.
+	I should tell Mitzie.
+if {clusters.cluster_2_complete} == true and {clusters.cluster_3_complete} == false:
+	Hm... 
+	I think that Cain was covering something up. 
+	Did he get caught?
+	I wonder if Mitzie knows anything about this.
+if {clusters.cluster_3_complete} == true and {clusters.cluster_4_complete} == false:
+	Cain and Aunt J are saying different things. 
+	I wonder why?
+if {clusters.cluster_4_complete} == true and {clusters.cluster_5_complete} == false:
+	Maybe Aunt J tried to get Cain to talk about this box by making him that meal?
+if {clusters.cluster_5_complete} == true and {clusters.cluster_6_complete} == false:
+	Cain has lied about things before, and he lied about why he left college. 
+	Wait... 
+	Did he lie about the lockbox too?
+if {clusters.cluster_6_complete}
+	Cluster 6 complete
+	[signal arg="end_game"]
