@@ -16,6 +16,7 @@ static var cursor_state = CURSOR_DEFAULT
 static var curr_connection: Control
 
 @onready var button_panel: Control = $ButtonPanel
+@onready var initial_position = position 
 
 
 func _process(delta: float) -> void:
@@ -30,12 +31,12 @@ func _input(event: InputEvent) -> void:
 
 func reveal():
 	visible = true
-	modulate.a = 0
+	#modulate.a = 0
 	scale = Vector2(3, 3)
 	rotation = deg_to_rad(randf_range(-45, 45))
 	var reveal_anim: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
 	reveal_anim.set_parallel()
-	reveal_anim.tween_property(self, "modulate:a", 1, 1.5)
+	#reveal_anim.tween_property(self, "modulate:a", 1, 1.5)
 	reveal_anim.tween_property(self, "scale", Vector2(1, 1), 1.5)
 	reveal_anim.tween_property(self, "rotation", 0,  1.5)
 
@@ -72,17 +73,21 @@ func cancel_connection() -> void:
 
 
 func remove_connection_from_list(connection: Connection) -> void:
-	connections.erase(connections.find_key(connection))
+	while not connection in connections.values():
+		connections.erase(connections.find_key(connection))
 
 
 func display_as_completed() -> void:
-	# TODO change note's appearance when it is complete
-	# TODO also add some indicator when it is NOT complete
-	pass
+	var t: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
+	t.tween_property(self, "position", initial_position, 1)
+	$Checkmark.visible = true
+	button_panel
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	mouse_default_cursor_shape = CursorShape.CURSOR_ARROW
 
 
 func pick_up() -> void:
-	hide_buttons()
+	#hide_buttons()
 	var t: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUINT)
 	t.tween_property(self, "scale", Vector2(1.2, 1.2), 0.3)
 	is_picked = true
@@ -101,11 +106,11 @@ func show_buttons() -> void:
 	if is_picked:
 		return
 	
-	#$AnimationPlayer.play("show_connection_buttons")
+	move_to_front()
 	button_panel.visible = true
 	var t: Tween = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT)
 	t.set_parallel()
-	t.tween_property(button_panel, "position:y", -size.y / 5, 0.5)
+	t.tween_property(button_panel, "position:y", -size.y / 4, 0.5)
 
 
 func hide_buttons() -> void:

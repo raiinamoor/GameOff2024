@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmho6kjep4bs2"]
+[gd_scene load_steps=18 format=3 uid="uid://cmho6kjep4bs2"]
 
-[ext_resource type="Texture2D" uid="uid://3b0iur3gcne0" path="res://icon.svg" id="1_4j8bh"]
 [ext_resource type="FontFile" uid="uid://dv3ixxtjdhthb" path="res://Fonts/MORE-SUGAR.THIN.TTF" id="1_5y3ei"]
 [ext_resource type="Script" path="res://Pinboard/Notes/note.gd" id="2_84h03"]
 [ext_resource type="PackedScene" uid="uid://7pnoxb7pntba" path="res://Pinboard/Connections/connection.tscn" id="3_q785b"]
+[ext_resource type="Texture2D" uid="uid://uxymdmyetoso" path="res://UI/Green connection.png" id="4_c7jah"]
+[ext_resource type="Texture2D" uid="uid://wpxg0qnik678" path="res://UI/Check mark.png" id="6_ij4ao"]
+[ext_resource type="Texture2D" uid="uid://uyrcnj26wukd" path="res://UI/Red connection.png" id="6_k5hky"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8r6ad"]
 
@@ -55,6 +57,20 @@ Button/styles/pressed = SubResource("StyleBoxEmpty_rl5mc")
 resource_local_to_scene = true
 load_path = "res://.godot/imported/Note_sprite3.png-ad506fcea406f71472dc7305a62c5904.ctex"
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xoknt"]
+texture = ExtResource("4_c7jah")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j6iii"]
+texture = ExtResource("4_c7jah")
+modulate_color = Color(1, 1, 1, 0.721569)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bdj35"]
+texture = ExtResource("6_k5hky")
+modulate_color = Color(1, 1, 1, 0.721569)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4bfhk"]
+texture = ExtResource("6_k5hky")
+
 [node name="Note" type="Button" groups=["notes"]]
 offset_right = 180.0
 offset_bottom = 80.0
@@ -70,7 +86,7 @@ script = ExtResource("2_84h03")
 connection_scn = ExtResource("3_q785b")
 
 [node name="ButtonPanel" type="Control" parent="."]
-z_index = -1
+show_behind_parent = true
 layout_mode = 1
 anchor_left = 0.25
 anchor_top = 0.1
@@ -84,45 +100,48 @@ mouse_filter = 1
 
 [node name="Button" type="Button" parent="ButtonPanel"]
 layout_mode = 1
-offset_right = 60.0
-offset_bottom = 60.0
+offset_right = 80.0
+offset_bottom = 80.0
+pivot_offset = Vector2(126, 116.8)
+tooltip_text = "This note confirms..."
 mouse_filter = 1
 mouse_default_cursor_shape = 2
-icon = ExtResource("1_4j8bh")
-flat = true
+theme_override_styles/hover = SubResource("StyleBoxTexture_xoknt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_j6iii")
 expand_icon = true
 
 [node name="Button2" type="Button" parent="ButtonPanel"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -18.0
-offset_right = 42.0
-offset_bottom = 60.0
-grow_horizontal = 2
-mouse_filter = 1
-mouse_default_cursor_shape = 2
-icon = ExtResource("1_4j8bh")
-flat = true
-expand_icon = true
-
-[node name="Button3" type="Button" parent="ButtonPanel"]
-layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -36.0
-offset_right = 24.0
-offset_bottom = 60.0
+offset_left = -60.0
+offset_right = 20.0
+offset_bottom = 80.0
 grow_horizontal = 0
+tooltip_text = "This note contradicts..."
 mouse_filter = 1
 mouse_default_cursor_shape = 2
-icon = ExtResource("1_4j8bh")
-flat = true
+theme_override_styles/hover = SubResource("StyleBoxTexture_bdj35")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4bfhk")
 expand_icon = true
 
-[node name="Node" type="Node" parent="."]
+[node name="Checkmark" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("6_ij4ao")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="button_down" from="." to="." method="pick_up"]
 [connection signal="button_up" from="." to="." method="put_down"]
@@ -131,4 +150,3 @@ expand_icon = true
 [connection signal="pressed" from="." to="." method="complete_connection"]
 [connection signal="pressed" from="ButtonPanel/Button" to="." method="init_connection" binds= ["res://Pinboard/Connections/connection_type_1.tscn"]]
 [connection signal="pressed" from="ButtonPanel/Button2" to="." method="init_connection" binds= [&"res://Pinboard/Connections/connection_type_2.tscn"]]
-[connection signal="pressed" from="ButtonPanel/Button3" to="." method="init_connection" binds= [&"res://Pinboard/Connections/connection_type_3.tscn"]]

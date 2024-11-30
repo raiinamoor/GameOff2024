@@ -31,6 +31,7 @@ func _process(delta: float) -> void:
 func connect_to(target: Button) -> void:
 	end_node = target
 	root_node.connections[target] = self
+	target.connections[root_node] = self
 	button.disabled = false
 	connection_removed.connect(root_node.remove_connection_from_list)
 	print("Connections from {name}: {cons}".format({"name": root_node.name, "cons": root_node.connections}))
