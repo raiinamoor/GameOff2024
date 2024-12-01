@@ -2374,15 +2374,25 @@ script/source = "extends Control
 @onready var intro_timeline = Dialogic.preload_timeline(\"res://Characters/intro_timeline.dtl\")
 
 
+func _ready() -> void:
+	Dialogic.signal_event.connect(end_game)
+
+
 func start_game():
-	await %TransitionRect.transition(true, 3)
+	await %TransitionRect.transition(true, 1)
 	visible = false
 	Dialogic.start(intro_timeline)
 	%RoomManager.visible = true
-	Dialogic.timeline_ended.connect(%TransitionRect.transition.bind(false, 2))
+	Dialogic.timeline_ended.connect(%TransitionRect.transition.bind(false, 1))
 	await Dialogic.timeline_ended
 	$\"../PauseMenu\".is_enabled = true
 	$\"../../../MusicManager\".start()
+
+
+func end_game(arg: String):
+	if arg == \"end_game\":
+		await %TransitionRect.transition(true, 3)
+		Dialogic.start(\"ending_timeline\")
 
 
 func quit_game():
@@ -2486,8 +2496,8 @@ func unpause():
 	Engine.time_scale = 1
 
 
-func return_to_main_menu():
-	is_enabled = false
+func quit():
+	get_tree().quit()
 "
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_4y2wq"]
