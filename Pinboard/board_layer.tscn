@@ -162,7 +162,7 @@ icon = ExtResource("6_i4idj")
 
 [node name="4" parent="PinBoard" instance=ExtResource("2_b4mnt")]
 visible = false
-self_modulate = Color(0.929412, 0.729412, 0.482353, 1)
+self_modulate = Color(0.556863, 0.670588, 0.870588, 1)
 layout_mode = 0
 offset_left = 1223.0
 offset_top = 1588.0
