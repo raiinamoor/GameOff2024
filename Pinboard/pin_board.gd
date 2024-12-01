@@ -142,5 +142,8 @@ func _on_connection_changed(n: Button) -> void:
 				# TODO move a note to a pre-defined place on the board when it is complete?
 				var note: Button = get_node(note_path)
 				note.display_as_completed()
+				for connected_note_path in cluster[note_path]:
+					var connected_note: Button = get_node(connected_note_path)
+					connected_note.display_as_completed()
 			for connection: Connection in connections_to_lock:
 				connection.lock()
