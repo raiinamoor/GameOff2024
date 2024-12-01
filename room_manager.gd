@@ -17,15 +17,15 @@ var aunt_j_unlocked: bool = true
 		if value < 0:
 			value = available_rooms.size() - 1
 		value %= available_rooms.size()
+		$"../MusicManager".curr_layer = $"../MusicManager/HouseMitzieLayer" if value == 0 \
+				else $"../MusicManager/HouseCainLayer" if value == 1 \
+				else $"../MusicManager/HouseAuntJLayer" if value == 2 \
+				else $"../MusicManager/PinboardLayer"
 		await %TransitionRect.transition(true, 0.5)
 		available_rooms[value].set_camera_active()
 		available_rooms[curr_room_idx].visible = false
 		available_rooms[value].visible = true
 		await %TransitionRect.transition(false, 0.5)
-		$"../MusicManager".curr_layer = $"../MusicManager/HouseMitzieLayer" if value == 0 \
-				else $"../MusicManager/HouseCainLayer" if value == 1 \
-				else $"../MusicManager/HouseAuntJLayer" if value == 2 \
-				else $"../MusicManager/PinboardLayer"
 		curr_room_idx = value
 
 
