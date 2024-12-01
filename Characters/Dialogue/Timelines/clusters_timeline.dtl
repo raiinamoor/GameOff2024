@@ -16,6 +16,5 @@ if {clusters.cluster_5_complete} == true and {clusters.cluster_6_complete} == fa
 	Cain has lied about things before, and he lied about why he left college. 
 	Wait... 
 	Did he lie about the lockbox too?
-if {clusters.cluster_6_complete}
-	Cluster 6 complete
+if {clusters.cluster_6_complete}:
 	[signal arg="end_game"]
